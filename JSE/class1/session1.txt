@@ -1,0 +1,138 @@
+Java is a Object Oritented Programing language so in an Object Orientation everthing can be represented as Classes and Objects.
+
+
+	class :-
+	****
+	class is a user defined datatype.	
+	class is a collection data members and methods.
+	class is a logical view.
+	We can not feel the class without an object.
+
+
+	class <ClassName>
+		{
+		   Data_Members;
+		   Methods;
+		}
+
+	Ex:
+		class AccountHolder
+			{
+			  long accountNo = 12435783 ;
+			  String accountName = "Srinu";
+			  float accountBalance = 150.50f; <DATA_Memebers>
+ 			
+				methods ....
+			
+			}
+
+******************************************************************************
+Developing first program in java :-
+*******************************
+1. Write a program
+
+	public class HelloWorld
+	{
+public static void main(String args[])
+{
+  System.out.println(" Welcome To Java => From Data Geeks");
+  
+}
+	}
+
+2. Save the file name as "HelloWorld.java" into ../JSE/class1 directory.
+
+3. Open command prompt with directory ../JSE/class1
+	
+		Navigate to the directory folder then type "cmd" up on the folder browser.
+
+		This will open command prompt with the directory location as ../JSE/class1.
+
+4.Compile the program
+
+		javac HelloWorld.java
+
+	If we recieve error as 
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+
+	We need to set the java path.
+
+	There are 2 ways to solve:
+
+		1. Temporary solution : update the path variable on command prompt.
+
+	../JSE/class1 > set path=.;c:\Program Files\Java\jdk1.6.0_45\bin
+	
+		Here the problem is the path is gone once we close command prompt.
+
+		2. Perminent Solution
+
+		Right click on Computer => Properties => Advanced System Settings => Environment Variables => User Variables => Click on new 
+		=> new prompt will open 
+
+			Name : path
+			value : c:\Program Files\Java\jdk1.6.0_45\bin
+
+		click on OK .
+
+	Note :
+	*****	The perminent path changes applies only after restart of commadn prompt.
+
+	
+	If the programe compiles successfully, then java compiler generates a HelloWorld.class file into ../JSE/class1 directory.
+
+
+5. Run the java program.
+
+		java HelloWorld
+
+
+Observations :-
+************
+	=>  JVM always loads .class file into RAM then calls the main(..) method.
+		If the main(..) method is not defined properly give an error at Runtime.
+		
+	=> Every change in .java file will be applicable only after compilation.
+	
+	=> If we give invalid class while running the program gives NoClassDefination Error.
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+			
+	
+
+
+
+
+
+
+
+
+			
+
+		
+
+
+
+
+
+
+
+
+
+	
+
