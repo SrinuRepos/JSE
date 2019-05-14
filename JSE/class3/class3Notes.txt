@@ -1,0 +1,92 @@
+Data Types :-
+*********
+
+	Data Types can be used declare a data member.
+	Data Types can be classified based on Data.
+
+		1. Numeric Data
+			data types as : byte(1B),short(2B),int(4B),long(8B)
+
+		2. Floating Data
+			data types as : float(4B) , double(8B)
+		
+		3. String Data
+			data type is :  String (Here memory is not fixed. Allocates the memory directly)
+
+		4. Boolean Data 
+
+			data type is : boolean (1B) => value either true or false.
+		5. Charecter Data :
+
+			data type is : char (1B)
+
+	Ex: refer DataMembersEx.java
+
+Conversion :-
+**********
+
+		It's a concept of converting one data type to another data type.
+
+	Implicit Conversion :- Here the data type conversion automatically taken care by JVM.  
+			Ex: byte => short => int => long 
+				float => double
+				char => byte
+				
+
+		int count = 10;
+		long s = count ; // converting int to long .implicit conversio.
+
+
+Explicit Conversion :- Here the programer has to take care of data type conversion . 
+
+		refer ImplicitAndExplicitConversionEx.java
+
+
+	In Explicit Conversion there is high possibility of LossyConversion(data loss), programer has to think about it.
+
+
+		int count = 257;
+		byte b = (byte) count;
+
+		observe the value of b is 1 LossyConversion(data loss).
+
+		refer LossyConversionEx.java
+
+
+***************************************
+
+Finding Ascii value of every charecter:
+
+		logic : convert char data type to byte.
+
+		refer FindAscciValueEx.java
+
+
+*******************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
