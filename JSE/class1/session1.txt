@@ -95,7 +95,45 @@ Observations :-
 		
 	=> Every change in .java file will be applicable only after compilation.
 	
-	=> If we give invalid class while running the program gives NoClassDefination Error.
+	=> If we give invalid class while running the program gives NoClassDefination Error Or 		Main Class not found error.
+	=> The file name and the class name is need not to be same .
+		Ex:-
+			HelloWorld.java
+
+			class Sample
+				{
+			public static void main(String args[])
+			{
+			......
+			......
+			}
+				}
+
+
+		Here the file name is HelloWorld.java but the class name is "Sample".
+		When we compile this program , Sample.class file will be generated so that at 			the time of running we should give 
+
+				CMD> java Sample
+
+	=> If we make a class as "public" then the file name shoudl be "<classname>.java" Otherwise JVM throws an error at compile time.
+
+		Sample.java
+		***********
+		public	class Sample
+				{
+			public static void main(String args[])
+			{
+			......
+			......
+			}
+				}
+
+
+
+
+
+ 
+
 
 	
 
