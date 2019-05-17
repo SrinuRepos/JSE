@@ -1,0 +1,153 @@
+Variable :-
+*******
+	Variable is a memory location which is having the capability of to store the data.
+	int count = 10; 
+
+	refer diagram.
+
+unstanding "if-else" statement :-
+***************************
+"if-else" statement can be used to check the condition.
+
+Syntax :-
+******
+	if(Condition)
+	{
+	.... //Condition is true
+	.... 
+	}else{
+	.... //Condition is  false
+	....
+	}
+
+
+unstanding "if-else-if" statement :-
+***************************
+
+if(Condition)
+	{
+.....
+.....//
+	}
+	else if(Condtion){
+.....
+.....
+	} 
+else{
+.....
+.....
+	
+    }
+
+increment and decrement operators :-
+**********************************
+
+++ (Increment operator ) :-
+*************************
+
+i++ which is equals to i = i+1;
+
+Pre Increment :-
+*************
+In case of pre increment the value will be incremented by one at the time of statment execution itself.
+Ex : ++i ;
+
+i=5;
+System.out.println(++i); i=6
+
+Post Increment :-
+*************
+In case of post increment the value will be incremented by one when the cursor is moved to next statement.
+Ex : i++ ;
+
+i=5;
+System.out.println(i++); i=5
+System.out.println(i);i=6
+
+Ex Program :- IncrementOperatorEx.java
+
+
+
+
+-- (Derement operator ) :-
+************************
+i-- which is equals to i = i-1;
+
+Pre Decrement :-
+*************
+In case of pre decrement the value will be decremented by one at the time of statment execution itself.
+Ex : --i ;
+
+i=5;
+System.out.println(--i); i=4
+
+Post Decrement :-
+*************
+In case of post decrement the value will be decremented by one when the cursor is moved to next statement.
+Ex : i-- ;
+
+i=5;
+System.out.println(i--); i=5
+System.out.println(i);i=4
+
+
+Ex Program :- DecrementOperatorEx.java
+
+Understanding looping statments :-
+*******************************
+1. while loop 
+2. do while loop
+3. for loop
+
+Understanding while loop :-
+************************
+while loop will be executed till the condition is failed.
+
+Syntax :-
+
+	while(Condition)
+	{
+	.....
+	......
+	increment/decrement.
+	}
+
+PrintNumbers from 1 to 10 : refer PrintNumbers.java
+PrintNumbers from 10 to 1 : refer PrintNumbersEx2.java
+
+Understanding "/" and "%" operators 
+
+"/" operator  will allways gives Quaficient as a result.
+************
+12/2  then the output is 6.
+
+123/10  then the output is  12.
+
+123/2 then the out put is  61.
+
+"%" operator  will allways gives Reminder as a result.
+************
+12%2  then the output is 0.
+
+123%10  then the output is  3.
+
+123%2 then the out put is  1.
+
+63%4 then out put is 3.
+
+refer OperatorsEx.java
+********************************************************
+
+Check wheather the given number is even or odd :-
+***********************************************
+refer EvenOrOddEx.java
+
+
+Print the even numbers till 50 :-
+******************************* 
+refer PrintEvenNumbers.java
+
+Print the Odd numbers till 50 :-
+******************************* 
+refer PrintODDNumbers.java
+

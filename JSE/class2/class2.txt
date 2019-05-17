@@ -1,0 +1,87 @@
+There are three kinds of applications.
+
+1.Stand Alone Applications
+2.WebApplications
+3.Mobile Applications
+
+
+Stand Alone Applications :-
+***********************
+An application which can be accessible only within the machine. Which can not be accessible outside the machine.
+These applications can be called as Stand Alone Applications.
+
+Ex:  VLC Media player,window media player, Google Chrome.
+
+Within the Stand Alone Application's the data can not be sharable.
+
+WebApplications :-
+***************
+An application through the web can be called as WebApplication.
+Within the web application the data can be sharable.
+All web applications gives 24/7 access.
+
+Ex :- Gmail,Facebook etc..
+
+Enterprice Application :-
+***********************
+Enterprice Application is a bussiness application which contains complex and heavy weight bussiness logics.
+
+Ex: Flipkart , Amazon , Bank Applications etc..
+
+Mobile Applications :-
+********************
+All the applications can be accessible within the mobile.
+
+Ex : android , play store etc..
+
+Java is devided into 3 parts.
+
+1. Java Standard Edition (JSE)
+2. Java Mobile Edition (JME)
+3. Java Enterprice Edition (JEE)
+
+refer diagram "JavaEdition.png"
+
+
+
+
+
+Java Development Kit (JDK1.8) :-
+*****************************
+=> Java Development Kit(JDK) is software which is given by Oracle Corp inorder to develop java applications.
+=> The Oracle corp has given separate JDK for every operating system.
+=> The current JDK is 1.8.
+
+The JDK is divided into two parts.
+
+1.Java Tools
+
+2.Java Runtime Environment(JRE)
+
+
+
+Java Tools :- 
+**********
+Java Tools are used by the java programmer inorder to compile and run the java programe.
+All the Java Tools are .exe files.
+
+Ex: -
+
+	javac  => This is used to compile java programe.
+	java   => This is used to run the java programe.
+	javap  => this is used to know the meta information about the java programe.
+
+	etc.
+
+
+
+Java Runtime Environment(JRE) :-
+****************************
+=> All the Java programes will be executed in Java Runtime Environment(JRE).
+=> Whenever we are trying to run the java programe on the top of the operating system  JRE will be activated.
+=> The JRE contains the implemetation for "Java Virtual Machine(JVM)" and Other Helper Files.
+=> Once the JRE is activated the JVM will automatically activated.
+=> JVM internally uses the Helper files of JRE to convert the Byte code into Machine Language.
+
+Refer JDK.png  and JavaExe.png diagrams.
+
