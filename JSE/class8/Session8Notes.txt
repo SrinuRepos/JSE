@@ -1,0 +1,17 @@
+Array :-
+****
+
+	=> Array is a data structure, it allows similer type of data.
+	=> Array stores more than one element.
+	=> In an Array elements stored based on index number.
+	=> Index number starts from 0 ends with n-1. Here n is the length of 	   an array.
+	
+Ex:-
+		int[] count = { 10,20,30,40};
+
+		count[0] returns 10
+		count[1] returns 20
+		etc..
+		
+		refer array digram
+	
