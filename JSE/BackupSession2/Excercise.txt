@@ -1,0 +1,45 @@
+Excercise :
+
+1. Sum of all natural numbers 
+	input n = 3
+	output = 1 + 2 + 3 = 6
+
+2. Sum of all even numbers 
+	input n = 3
+	output = 2 + 4 + 6 = 12
+
+3. Sum of all Odd numbers 
+	input n = 3
+	output = 1 + 3 + 5 = 9
+
+4. Print a muliplication table
+
+5. Count number of digits in the number
+
+	input n = 123;
+	output = 3;
+
+6. Calculate Product Of Digits
+
+	input n = 123;
+	output = 1 * 2 * 3 = 6;
+
+
+7. Swap two numbers
+
+	input a = 10 ; b = 15;
+	out put a = 15 ; b = 10;
+
+8. Find all factors of given number
+
+		input 6
+		output 1,2,3
+
+
+
+9. Write a program for given number is perfect number.
+
+For example: 6 is the first perfect number
+Proper divisors of 6 are 1, 2, 3
+Sum of its proper divisors = 1 + 2 + 3 = 6.
+Hence 6 is a perfect number.
