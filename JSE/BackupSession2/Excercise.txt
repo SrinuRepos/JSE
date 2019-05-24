@@ -43,3 +43,13 @@ For example: 6 is the first perfect number
 Proper divisors of 6 are 1, 2, 3
 Sum of its proper divisors = 1 + 2 + 3 = 6.
 Hence 6 is a perfect number.
+
+10. Write a program to find its a strong number or not ?
+
+Strong number is a special number whose sum of factorial of digits is equal to the original number.
+For example: 145 is strong number. Since, 1! + 4! + 5! = 1 + 24 + 120 = 145
+
+11.write a program to print fibonacci series.
+
+		input n = 8
+		output 1 1 2 3 5 8 13 21  
