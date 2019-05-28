@@ -1,0 +1,127 @@
+Understanding Object Oriented Princeples :-
+****************************************
+class : -
+******
+	"class" is a user defined data type.
+	"class" is a collection of a data members and methods.
+	"class" is a logic view.
+	
+Syntax :-
+	class <Class_Name>
+	{
+	Data_Members;
+	Methods;
+	}
+
+class HumanBeing
+	{
+int humanMind = 1;
+int humanHands = 2;
+
+public void charecter(humanMind)
+{
+...
+...
+}
+	}
+
+=> We can not feel the class without an object.
+
+
+Understanding Object :-
+********************
+	=> Object is a physical representation of a class.
+	=> One class can have any number of Object's.
+	=> Every Object contains it's own state,it's identity,it's own behaviour.
+	=> The State of an object represents data members of a class.
+	=> The behaviour of an object represents methods of a class.
+
+Object Creation syntax :-
+**********************
+	We should use "new" keyword to create the Object.
+
+	new <Class_Name>();
+
+	new HumanBeing(); //Here the HumanBeing obejct is created but which is not refered by any reference.
+
+HumanBeing srinu = new HumanBeing();
+
+Here "srinu" is a reference which is refering to HumanBeing Object.
+
+
+** Inorder to access the variable and methods of a class we should create the object.
+** We can access the variables and methods of a class using Object reference.
+
+
+Ex :-
+****
+
+class HumanBeing
+	{
+
+String qly = "B.Tech";
+
+public void designation()
+{
+System.out.println(" Designation is : S/W Eng");
+}
+
+public static void main(String args[])
+{
+HumanBeing srinu = new HumaBeing();
+
+System.out.println(" Qualificatio : "+srinu.qly);
+
+srinu.designation();
+}
+
+	}
+
+refer SampleApp.java
+*********************
+
+Understanding Local Variables and Instance Variables :-
+******************************************************
+
+Instance Variables :-
+********************
+=> The Variables which are declared within the class can be called as instance variables.
+=> JVM will assigns defaults values to the instance variables at the time of Object creation.
+=> All instance variable can be accessible within the class directly.
+=> If we want to access instance variables outside the class , we need object reference.
+
+Ex :-
+class Sample
+	{
+int accNo ;
+String accName;
+float amount;
+boolean status; //Instance Variables.
+....
+....
+....
+	}
+
+Local Variables :-
+***************
+=> The Variable which declare within the method can be called as Local Variables.
+=> For the Local variables defaults values can not be assigned by the JVM.
+=> All the Local variables should be initilized before using.
+=> The Local Variables can be accessible only within the method.
+
+class Sample 
+	{
+....
+....
+public void display()
+{
+int pinCode = 10; // Local Variable
+
+System.out.println(" pinCode : "+pinCode);
+}
+	}
+
+
+
+
+	

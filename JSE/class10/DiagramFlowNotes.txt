@@ -1,0 +1,80 @@
+SampleApp.java Flow Notes:-
+*************************
+When we compile a SampleApp.java , java compiler generates Sample.class and SampleApp.class within the HardDisk.
+
+	While Running we use "java SampleApp".
+
+Here the java tool activates JAM in the RAM. Then the JVM does the following jobs.
+
+1. JVM loads SampleApp.class file into method Area of a RAM.
+
+2. JVM calls the main(..) method.
+
+3. Whenever JVM finds new keyword does the following jobs.
+
+	a) Loads Sample.class file into method Area
+	b) create a Object for Sample.class in the Heap.
+		Creating a Object is nothing but allocating a memory for the 		datamembers of a class.
+	c)Sample Object will be refered by a reference 's' from the stack.
+
+4) JVM access count, name varibles with reference 's' and display them on the screen.
+
+5) s.display();
+
+	Here the display() loads into a stackframe of stack. The method will be executed within the stackframe.
+	Once the method execution is completed then stackframe will be terminated from the stack.
+
+Ex: - If we call display() 3 times.
+
+	3 stack frames will be created in the stack then display() method executes 3 times.
+
+
+InstanceAndLocalVariablesEx.java Flow Notes:-
+*************************
+When we compile a InstanceAndLocalVariablesEx.java  , java compiler generates Sample.class and InstanceAndLocalVariablesEx.class within the HardDisk.
+
+	While Running we use "java InstanceAndLocalVariablesEx".
+
+Here the java tool activates JAM in the RAM. Then the JVM does the following jobs.
+
+1. JVM loads InstanceAndLocalVariablesEx.class file into method Area of a RAM.
+
+2. JVM calls the main(..) method.
+
+3. Whenever JVM finds new keyword does the following jobs. 
+	Sample s = new Sample() // logic
+
+	a) Loads Sample.class file into method Area
+	b) create a Object for Sample.class in the Heap.
+		Creating a Object is nothing but allocating a memory for the 		Instance Variables of a class.
+	c) JVM assigns default values to the instance variables after cration 		of the object.
+		JVM assing following defaults values.
+		=> For Numeric Data (byte,shot,int,long) default value = 0
+		=> For Floating Data (float,double) default value = 0.0
+		=> For  Boolean Data (boolean) default value = false
+		=> For String Data (String) default value = null
+		=> For Charecter Data (char) default value = empty space
+		
+	d)Sample Object will be refered by a reference 's' from the stack.
+
+
+
+4) s.display();
+
+	Here the display() loads into a stackframe of stack. The method will be executed within the stackframe.
+	Once the method execution is completed then stackframe will be terminated from the stack.
+
+Ex: - If we call display() 3 times.
+
+	3 stack frames will be created in the stack then display() method executes 3 times.
+
+
+
+
+
+
+
+
+
+
+	
