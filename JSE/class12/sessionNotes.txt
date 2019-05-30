@@ -1,0 +1,168 @@
+Recursion in Java :
+
+Recursion in java is a process in which a method calls itself continuously. 
+A method in java that calls itself is called recursive method.
+It makes the code compact but complex to understand.
+
+Encapsulation :-
+**************
+We should not access the data members of a class directly. We should access them only through functionality.
+In simple Encapsulation bind the data and functionality togather.
+
+This can be achieved in java using access specifiers.
+
+Java has given following predefined access specifiers .
+
+	1. public :- If we declare any class or method or variable as public , which can be accessible within the class , within the package,outside the package. (any where).
+
+
+	2. protected :-If we declare any  method or variable as protected, which can be accessible within the class and within the package directly. But outside the package can be accessible only through inheritance.
+
+	3. defulat :-
+	   *******
+	If we don't specify any access specifier then it is called default access specifier.
+	If the class or method or variable has default access specifier which can be accessible only within the class,within package.
+
+
+	4. private :- 
+	   *******
+		If we declare variable or method as private , which can be accessible only within the class.
+
+Note :-
+*****
+	The protected and private access specifiers can not be applicable to "class".
+
+Ex :- BankApp.java
+	
+
+constructor :-
+**********
+=> constructor is a special type of method.
+=> constructor does not contains the return type.
+=> constructor name should be same as class name.
+
+Ex: -
+****
+	class Sample
+	{
+		int count;
+
+		public void display()
+		{
+		....
+		....
+		}//method
+
+	public Sample()
+		{
+	count = 10; //initialization logic
+	.....
+	.....
+		}//Constructor
+	}
+
+=> Constructor is invoked by the JVM at the time of Object creation.
+
+	Sample s = new Sample();
+
+=> The main usage of constructor is to develop initialization logic.
+=> Which means constructor is used to initialize instanace variables of a java class.
+
+
+There are two types of Constructors
+
+	1. Default constructor.
+	2. Parameterized Constructor.
+
+Default constructor :-
+*******************
+=> Default Constructor does not contains any parameters.
+
+	class Sample
+	{
+
+	public Sample( )
+	{
+	....
+	....
+	}// Default Constructor.
+
+	}
+	
+=> If we don't write any constructor within the java class then JVM will automatically creates the default constructor.
+=> JVM creates the default constructor to assign the default values to the instance variables of a java class.
+
+Ex: DefaultConstructorApp.java
+
+class Sample
+	{
+ int count;
+ String name;
+
+public void display()
+{
+System.out.println("\n Count : "+count);
+System.out.println("\n Name : "+name);
+}
+	}
+
+public class DefaultConstructorApp
+	{
+public static void main(String args[])
+{
+Sample s = new Sample();
+s.display();
+}
+	}
+
+=> Here within the "Sample" class we did not write the default constructor so JVM will automatically creates the default constructor in "Sample" class.
+
+=> CMD > javac DefaultConstructorApp.java
+=> CMD > javap Sample
+
+class Sample {
+  int count;
+  java.lang.String name;
+
+  Sample();// this is added by JVM 
+
+  public void display();
+}
+
+Ex2 :-
+****
+DefaultConstructorApp2.java
+
+2. Parameterized Constructor :-
+   *************************
+** => Parameterized Constructor contains the parameters.
+   => If we write Parameterized Constructor within the java class then JVM does not creates the default constructor.
+   => Parameterized Constructor can be used to pass different values to the different objects as runtime.
+
+Ex:- CollegeApp.java
+
+
+Method Overloading :-
+******************
+Method Overloading is a concept of defining the Same method within the java class by changing the number of  parameters and type of parameters.
+
+Ex: - MethodOverloadingEx.java
+
+Advantage :-
+**********
+MethodOverloading increases the readability of the Java Program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
