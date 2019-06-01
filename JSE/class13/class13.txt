@@ -68,16 +68,35 @@ refer InheritanceObs2App.java
 We will get the following  error: sampleName has private access in Sample
 System.out.println(" From Test : sampleName  "+sampleName );
 
+super keyword && super()  constructor :-
+****		 *******
+
+super keyword :-
+****
+=> "super" keyword is an implicit reference variable , created by JVM for super class object.
+
+=> "super" keyword will allways represents Super class Instance.
+
+=> When super class variables and child class variable both are same , we can differentiate them using "super" keyword.
+
+refer SuperEx1.java
 
 
+super()  constructor :-
+*******
 
+=> super() constructor is used by the JVM inorder invoke super class constructor.
 
+=> JVM by defaultly adds "super()" constructor  as a first statement within the Child Constructor.
 
+=> Whenever we are trying to create child class object, JVM internally creates super class object using "super()" constructor.
 
+=> The super class object will be refered by the JVM using an implicit reference variable i.e "super".
 
+refer SuperEx.java and SuperDiagram.
 
+=> Within the parent class if there is no defualt constructor we should class explicitly using super() constructor.
 
+reder SuperEx2.java
 
-
-
-
+=> The caling to super() constructor must be the first statement within the constructor.
