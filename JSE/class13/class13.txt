@@ -1,0 +1,83 @@
+understanding "this" keyword :-
+*****************************
+=> "this" is an implicit reference variable created by JVM at the time of Object creation.
+=> "this" keyword is used to by the JVM inorder to refer current class instance variables and methods.
+=> "this" will allways refers current class instance (i.e object).
+
+Ex: -ThisVarApp.java , ThisVarApp diagram.
+
+Usage of this : -
+**************
+** Whenever Local Variables and Instance Variables are same , we can deferentiate them using "this" keyword.
+
+Ex: -
+****
+ThisEx.java
+
+Inheritance :-
+************
+Inheritance is a concept of reusing properties of one class into another class.
+
+In java Inheritance can be supported in 3 ways
+
+1. IS - A Relationship
+
+2. HAS - A Relationship
+
+3. USE - A Relationship.
+
+
+=> IS - A Relationship :-
+   ******************
+
+	In case "IS - A Relationship" we use "extends" to reuse properties of one class into another class.
+
+There are 3 types of "IS - A Relationship's"
+
+1. Single Level Inheritance 
+
+2. Multi Level Inheritance 
+
+3. Hierarchical Inheritance 
+
+Single Level Inheritance : Here we have single level of inheritance. Ex:- Relationship with "Father and Son".
+
+Multi Level Inheritance : Here we have more than one level of inheritance. Ex:- Relationship with 
+			  "GrandFather and Father and Son ".
+
+Hierarchical Inheritance : Here one parent can have more than once child classes.
+
+refer Inheritance Diagram.
+
+
+Why java does not support multiple inheritance ?
+
+refer MultipleInheritance diagram.
+
+Observations on inheritance Concept :-
+***********************************
+1. Whenever we inherit the class, the parent data can never loaded into the child class.Still the child class can able to refere parent data using "super concept" in java.
+
+refer InheritanceObs1App.java
+
+
+2. The "private" members of Parent class won't be accessible from child class.
+
+refer InheritanceObs2App.java
+
+We will get the following  error: sampleName has private access in Sample
+System.out.println(" From Test : sampleName  "+sampleName );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
