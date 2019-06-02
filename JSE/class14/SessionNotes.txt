@@ -1,0 +1,186 @@
+Method Overloading :-
+******************
+
+Method OVerloading is a concept of defining same method within the java class by changing the number of parameters or type of parameters.
+
+Ex :-
+
+class Message
+	{
+public void display()
+{
+System.out.println(" From Message : display Demo on Method Overloading ");
+}
+
+
+public void display(int count)
+{
+System.out.println(" Count :  "+count);
+}
+
+public void display(String msg)
+{
+System.out.println(" msg :  "+msg);
+}
+	}
+
+
+public class MethodOverloadingEx
+	{
+public static void main(String args[])
+{
+Message obj = new Message();
+obj.display();
+obj.display(10);
+obj.display("Hi Good Morning");
+}
+	}
+
+Advantage :-
+********
+Which increases the readability of the java programe.
+
+refer MethodOverloadingAdvEx.java
+
+**************************************
+
+Method Overriding :-
+******************
+Method Overriding is a concept of redefining the parent class method within the child class.
+
+
+Rules for method Overrinding :-
+****************************
+=> You can say the method is overriden when the child class has define the       same method signature.
+   Method Signature involves acces specifier , return type , method name and parameters.
+
+=> The child class Overriding method should not have weaker access specifier compare to Parent class method.
+
+
+Ex :-
+****
+class Vechile
+	{
+protected void run()
+{
+System.out.println("\n Vechile is Running ");
+}
+	}
+
+
+class Bus extends Vechile
+	{
+
+public void run()
+{
+System.out.println("\n Bus is Running ");
+}
+
+	}
+
+=> MethodOverriding can not be possible by changing the return type.
+
+
+
+Pollymorphism :-
+*************
+Single Parent class reference can able to refer any number of Child class Object's that is called pollymorphism.
+
+Rule :-
+*****
+	**Whenever the Parent reference is pointing to the child object's, the parent reference can refer only the methods which are declared in parent class.
+	**Using Parent reference we can not call child call specific methods.
+
+refer : PollymorphismEx.java
+
+
+There are two types of Pollymorphism's
+
+	1. Compiletime Pollymorphism.
+	2. Runtime Pollymorphism.
+
+
+Compiletime Pollymorphism :-
+**************************
+Here calling to a Overloaded method can be decided at compile time so it is called Compiletime Pollymorphism.
+
+
+Ex :-
+*****
+class  Vechile
+	{
+
+public void run() 
+{
+	System.out.println(" Vechile is Running ");
+}
+
+public void run(int hp)
+{
+	System.out.println(" Vechile runs with HP = "+hp);
+}
+	}
+
+class  Bike extends Vechile
+	{
+	public Bike()
+		{
+	System.out.println(" \n\n From Bike Cosntructor");
+		}
+	}
+
+public class CompileTimePolymorphismEx
+	{
+public static void main(String args[])
+{
+	Vechile c = new Bike();
+	c.run();
+	c.run(150); // Calling to these overloaded methods is deciding at 			compile time.
+}
+	}
+
+
+Runtime Pollymorphism :-
+**************************
+Here calling to the Overridden method can be decided at run time so it is called Runtime Pollymorphism.
+
+Ex :
+****
+class  Vechile
+	{
+
+
+public void run() 
+{
+	System.out.println(" Vechile is Running ");
+}
+
+	}
+
+
+class  Bike extends Vechile
+	{
+	
+	public void run() 
+		{
+	System.out.println(" Bike is Running ");
+		}
+
+	}
+
+
+
+public class RunTimePolymorphismEx
+	{
+public static void main(String args[])
+{
+	Vechile c = new Bike();
+	c.run(); // Here the calling to overriden method is decided at runtime
+		 
+}	
+
+	} 
+
+
+
+
