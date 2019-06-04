@@ -28,7 +28,7 @@ public void getStockInfo()
 
 USE - A Relationship :-
 ********************
-=> In  USE-A Relationship we take the dependency as a parameter to the method or constructor.
+=> USE-A Relationship is a concept of defining user defined data type as a local variable within a method.
 
 class Item
 	{
@@ -85,7 +85,7 @@ final method :-
 
 final class :-
 ************
-	If we declare a class as "final" , which can be inherited.
+	If we declare a class as "final" , which can not be inherited.
 
 Sample.java
 ***********
