@@ -1,0 +1,166 @@
+static method :-
+*************
+=> If we apply a static keyword to the method then it is called static method.
+=> A static method allows only static variables. 
+=> A static method does not allow non-static variables.
+=> static method can directlry invoked with the help of a class name.
+
+Syntax :-
+********
+ClassName.methodName();
+
+Ex :- StaticMethodEx.java
+
+Static Factory Method : -
+**********************
+A static method of a java class having the capability of returning it's own java class object reference .
+
+Ex: -
+
+class Sample
+	{
+public void getInfo()
+{
+System.out.println("\n\n Sample : getInfo");
+}
+
+public static Sample getSampleObject()
+{
+Sample s = new Sample();
+return s;
+} //Static Factory method.
+	}
+
+
+
+static block :-
+*************
+=> static block is mainly used to initilize static variables.
+=> static block will be executed by the JVM only once at the time of class loading.
+
+static
+{
+... used to initialize static variables.
+...
+} //Static Block
+
+
+The Diff b/w static block and Constructor Block ...?
+
+1. The Static Block is used to initialize static variables where as Constructor Block is used initialize non-static variables.
+
+2. The Static Block executed by the JVM only once at the time of class loading .
+
+3. How many times we create a obeject so many time's JVM executes the  Constructor Block .
+
+
+
+Design Pattern :-
+**************
+Design Patterns are specifications which contains set of rules and regulations. If we follow Design Patterns we can increase the perfomance of a java application.
+
+Singleton Design Pattern :-
+************************
+Whenever an Object State is common  for all the client request's  why we need to create a   object every time, create the object only once then reuse the reference more than once.
+
+In simple Singleton object means only one java class object can be used by all the user requests.
+
+Procedure to develop singleton object :-
+**************************************
+
+1. Declare "private static  final " reference variable as an instance variable.
+
+2. Create the object in "static-block".
+
+3. Make the "Constructor" as private.
+
+4. Return the object reference from static factory method.
+
+Ex: -
+****
+	class Sample
+	{
+1.private static final Sample s;
+
+2.static
+{
+s = new Sample();
+}
+
+3.private Sample()
+{
+}
+
+4.public static Sample getSample()
+	{
+return s;
+	}
+	}
+
+refer :- SingleTonApp.java Programe.
+
+Understanding Command Line Arguments :-
+************************************
+=> Whatever values we pass at runtime those are called as Command Line Arguments.
+
+=> By default JVM treats all the Command Line Arguments as String values.
+
+=> JVM groups all Command Line Arguments as a String[] array and pass them to the main(..) method.
+
+
+Ex :- refer CommandLineArgsEx.java 
+
+Execution Procedure :-
+*******************
+
+Compile >javac CommandLineArgsEx.java
+
+Run >java CommandLineArgsEx Srinu 1242 5000.52
+
+Here every Commandline Argument can be differentiated with the "Space" .
+
+
+Understanding "public static void main(String args[])" :-
+******************************************************
+
+=> "main" is a keyword , which indicates starting of the programe execution. JVM will allways starts the programe execution from the main(..) method.
+ 
+=> "void" is  a return type. If the method contains return type as "void"  we need not to return any value.
+
+=>  They given main(..) method as "static" so that JVM can call the main(..) method directly with the help of class name.
+
+=> main(..) method is "public"  so that we can access "main(..)" from anywhere.
+
+=> String args[] can be used to work with command line arguments.
+
+Undestanding "System.out.println" :-
+**********************************
+
+=> "PrintStream" is a predefined java class which declares overloaded 
+    println() methods. These println() methods have the logic to connect with     console and prints the output.
+
+=> "System" is a predefined java class which declares "PrintStream" as static refernece variable with "out".
+
+
+
+public class PrintStream 
+	{
+public String println(...)
+{
+....
+....
+}
+	}
+
+
+public class System
+	{
+public static PrintStream out ;
+...
+....
+	}
+
+So that to access the println(..) method of PrintStream class we need to write the following statement
+
+"System.out.println(..)".
+
