@@ -36,11 +36,11 @@ public static void main(String args[])
 {
 	Vechile c = new Bike();
 	c.run();
-	c.run(150);
+	c.run(150);  // Calling to these overloaded methods is deciding at compile time
 
 	  c = new Bus();
 	  c.run();
-	  c.run(300);
+	  c.run(300); // Calling to these overloaded methods is deciding at compile time
 }	
 
 	} 

@@ -28,8 +28,8 @@ public class MethodOverrdingEx
 public static void main(String args[])
 {
 	Bike b = new Bike();
-	b.run();
-	b.run(10);
+	b.run(); // This is Method - Overriding
+	b.run(10);// This is Method Overloading
 }
 
 	}

@@ -1,0 +1,129 @@
+Has - A Relationship :-
+********************
+=> HAS-A Relationship is a concept of declaring user defined data type as an instance variable.
+
+class Item
+	{
+private String name = "Santoor";
+private int price = 35;
+
+public void getItemDetails()
+{
+	System.out.println(" Name  : "+name);
+	System.out.println(" Price : "+price);
+}
+	}
+
+class Store
+	{
+private Item i = new Item(); // HAS-A Relationship
+
+public void getStockInfo()
+{
+	System.out.println(" Available Stock is :");
+	i.getItemDetails();
+}
+	}
+
+
+USE - A Relationship :-
+********************
+=> In  USE-A Relationship we take the dependency as a parameter to the method or constructor.
+
+class Item
+	{
+public void getItemData()
+{
+System.out.println(" From Item : This is an information about Item ");
+}
+	}
+
+
+class Shop
+	{
+public void displayItems(Item obj) // USE-A Relationship
+{
+obj.getItemData();
+}
+	}
+
+
+
+final keyword concept :-
+*********************
+
+final is a keyword which can be applied to a
+
+	=> Variable
+		OR
+	=> Method 
+		OR
+	=> Class
+
+
+final Varible :-
+**************
+=> If we declare a variable as final which can not be modified.
+=> For the final variables default values won't be assigned by the JVM.
+=> final variables must be initialized before using.
+
+Blank final varible :-
+********************
+** We can initialize the final variable within the constructor which is called blank final variable.
+
+Blank Final Varibles can be used for the implementation of PANCard application.
+
+Note:-
+****
+** If it is a static final variable , we can initialize them in static block.
+
+
+final method :-
+*************
+=> If we declare a method as final which can not be overridden.
+
+
+final class :-
+************
+	If we declare a class as "final" , which can be inherited.
+
+Sample.java
+***********
+final class Sample
+	{
+public void getInfo()
+{
+System.out.println("\n\n Information about the Sample Class :");
+}
+	}
+
+class Child extends Sample
+	{
+	}
+
+
+Once we compile this we get the following error : -
+
+Sample.java:9: error: cannot inherit from final Sample
+class Child extends Sample
+
+Understanding static concept :-
+*****************************
+Java gives "static" concept for memory management.
+
+"static" is a keyword which can applied 
+i) to a variable
+ii) to a method
+iii) to a block.
+
+
+1) static variable :-
+   ****************
+=> For a static variable memory will be allocated only once.
+=> All the static variables will be instantiated  within the " static area or class area " at the time of class loading.
+=> Static variable can be shared by all the Object's.
+
+
+
+
+
