@@ -1,0 +1,109 @@
+Abstraction :-
+***********
+Abstraction is a Object Oriented Princeple.
+
+Abraction princeple says hides the implementation and shows the functionality.
+
+In java Abstraction can be supported in two ways.
+
+	=> 1. abstract classes ( provides 0 - 100% abstraction )
+	=> 2. interfaces ( provides 100% abstraction )
+	
+
+abstract classes :-
+****************
+
+'abstract' is keyword which can be applied to either to a 'class' or to the 'method'.
+
+abstract method :-
+***************
+=> An abstract method does not contains  definition.
+
+Ex :- public abstract void display();
+
+abstract class :-
+***************
+=> An abstract class can contain fully implimented methods (OR) fully unimplimented  methods (OR) both.
+=> If a java class contains atleast one abstract method then we should declare class as an abstract.
+=> An abstract class can not be instantiated.
+
+Ex :-
+***
+abstract class Sample
+	{
+public abstract void display();
+
+public void getInfo()
+{
+System.out.println(" Demo on Abstraction : getInfo ");
+}
+
+public static void main(String args[])
+{
+Sample s = new Sample(); // Error at compiletime Sample is abstract; cannot be instantiated
+}
+	}
+
+=> The First concrete class of an abstract class should provide definition for all the abstract methods of an abstract class otherwise we should declare the class as an abstract.
+
+refer : DemoApp.java
+
+Note :-
+******
+concrete class is nothing but a sub class or child class.
+
+=> An abstract class can contain the constructor. From the child class constructor , abstract class constructor is called to initialize the parent variables.
+
+interfaces :-
+*********
+=> 'interface'  is a special  data type.
+=> An 'interface' provides 100% abstraction.
+=> An 'interface' contains only abstract methods.
+=> Within interface we can privde common definition through static methods.
+   A static method can not be overridden by sub clases.
+=> All the variables which are declared within the interface are 'public          static final ' variables.
+=> All the methdos which are declared within the interface are 
+   'public abstract ' methods
+
+interface Sample
+	{
+public static final int count = 20;
+public abstract void display();
+public abstract void getInfo();
+public static void display()
+{
+	System.out.println("From display() :: static method");
+}
+	} 
+
+=>  Allways a 'class' will 'implements' the 'interface'.
+
+=>  Allways a 'class' will 'extends' another 'class'.	
+
+=>  An 'interface' will always 'extends' another 'interface'.
+
+=> The First concreate class which is implementing an interface , should provide the defination for all the abstract methods of an interface otherwise declare the class as 'abstract'.
+
+refer InterfaceDemoApp.java
+
+=> 'interface' does not contains a Constructor . 
+
+=> JVM treats by defaults  all the variables which are declared within the interface are 'public static final ' variables. 
+=> JVM treats by defaults  all the methdos which are declared within the interface are 'public abstract ' methods.
+
+interface Test
+	{
+int count = 10;
+void display();
+	}
+
+compile the Test class.
+
+See the javap of a Test class
+
+Compiled from "Test.java"
+interface Test {
+  public static final int count;
+  public abstract void display();
+}
+
