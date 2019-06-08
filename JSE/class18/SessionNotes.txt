@@ -1,0 +1,50 @@
+Note :-
+*****
+	Ingenerally jvm treats all the command line arguments as String values.
+
+=> we have "Integer" class which contains "public static int parseInt(String)" method , which converts the String representation of a integer value into "Integer format".
+
+Ex : int count = Integer.parseInt("125");
+
+refer : SampleApp.java
+
+
+=> Simlarly for float we have "Float" class which contains "public static int parseFloat(String)"
+
+Ex: 
+
+	float balance = Float.parseFloat("1500.25f");
+
+etc
+
+
+=> From the command prompt we can also pass classes at runtime . But treat these classes as String values.
+
+=> "java.lang.Class" which converts String representation of a "java class" into "class format".
+
+=> The java.lang.Class contains following methods 
+
+	public static Class forName(String className) :- 
+        ********************************************
+	=> It converts the String representation of java class into class format.
+	=> It will load the provided class into the RAM.
+	=> It will create the Object of "java.lang.Class".
+	=> The forName(String) can never creates the 'loaded class object'.
+
+
+=> public Object newInstance()
+   ***************************
+	The newInstance() method will create the obejct of loaded class. 
+
+refer RuntimeParamDemo.java , RuntimeParam.png Diagram
+
+
+Realtime Use case of Interfaces and Abstract classes :-
+******************************************************
+
+=> interface is a specification. which contains only declarations.
+=> inteface will allways declares the set of rules and regulations in the form "public static final varibles and abstract methods".
+
+=> ** interfaces will allways makes the loose coupling between service request and service provider Object's.
+
+	refer HotelApp.java

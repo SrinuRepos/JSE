@@ -1,0 +1,199 @@
+				Packages  :-
+				********
+
+package :- 
+******
+
+	A Package is a group of related java classes or interfaces or abstract classes or sub packages.
+
+Advantage of package :	
+Maintaining the application becomes very easier.
+
+
+There are two types of packages 
+	
+1.Predefined Packages
+
+2.Userdefined packages.
+
+	refer packages diagram.
+
+Predefined Packages :-
+=> Predefined Packages are used by the java programmer to develop java application.
+=> All the Predefined Packages will be available from JDK installation.
+
+ex :- java.lang , java.io, java.util etc..
+
+
+=> Whatever classes which are presented in "java.lang" package, can be directly used in java programe.
+
+=> We should use "import" keyword to reuse the classes which are present in other packages ex: java.util,java.io etc..
+
+
+java.util.Scanner :-
+*****************
+"java.util.Scanner" class can be used to read the data from console.
+
+Scanner Constructor :-
+*******************
+public Scanner(InputStream) :- We can create a object of Scanner by using this constructor.
+
+
+=> The java.lang.System class has a static reference variable as "in" which is pointing to "java.io.InputStream" object.
+
+public final class java.lang.System {
+  public static final java.io.InputStream in;
+  public static final java.io.PrintStream out;
+	......	
+	.....
+	}
+
+Now we can create the "java.util.Scanner" class object as 
+
+Scanner scan = new Scanner(System.in);
+
+
+=> The "java.util.Scanner" class has given set of methods to read the input data.
+
+	1. public int nextInt() :- which is used to read Integer data
+	2. public float nextFloat() :- which is used to read Float data
+	
+Similarly we have public boolean nextBoolean(),public boolean nextLong(),public double nextDouble() etc.
+
+	3.public String next() :- which is used to read "String" type of data.
+
+
+UserDefined Packages :-
+*********************
+=> All the UserDefined Packages are created by the java programmer.
+=> We can create a package using "package " keyword.
+=> the "package" statment must be first statement within the java programe.
+
+structure of the java programe is : 
+
+	package package_Name	
+	import ....
+	..........
+	public class Class_Name
+	{
+....
+....
+....
+	}
+	
+=> standard to defined the package_name as "com or org . company or org name . purpose".
+
+	Ex :- org.adp.io => This package contains all the java classes developed by programer related to io devices.
+
+	      org.jpmorgan.util => => This package contains all the java classes developed by programer related to common functionalities.
+	
+etc..
+
+=>  Compilation Syntax for packages : *** 
+
+	compile > javac -d . *.java 
+
+( java compiler compiles all the classes presented in current directory and creates the packages i.e sub folders).
+
+	-d indicates the directory.
+
+	"." dot indicates current directory.
+
+	"*" all the java files.
+
+
+=> To Run > java completePackagename.Class_Name
+
+PrintNumbersApp.java
+********************
+
+package com.oracle.test;
+
+import java.util.Scanner;
+
+public class PrintNumbersApp
+	{
+public static void main(String args[])
+{
+Scanner scan = new Scanner(System.in);
+System.out.println(" Please enter number");
+int n = scan.nextInt();
+for(int i=1 ; i <= n ;i++)
+{
+System.out.println(i);
+}
+}
+	}
+
+
+Compile > javac -d . *.java
+
+After successfull compilataion of a java programe then JVM will create the "PrintNumbersApp.class" file under com/oracle/test folder.
+
+RUN > java com.oracle.test.PrintNumbersApp
+
+
+Understanding Access Specifiers with repect to Packages :-
+
+1. public  :- If we declare a class or method or variable as public , which can accessible in any where.
+
+		within the class,within Package and outside the package.
+
+2. protected  :- If we declare a  method or variable as protected , which can accessible  within the class and within Package directly but  outside the package can be accessible only through inheritance.
+	
+
+
+3. default  :- If we declare a  method or variable or class as default , which can be accessible  within the class and within Package directly but  outside the package can not be accessible .
+
+
+4. private :- If we declare a  method or variable as private , which can accessible  only within the class .
+
+Note :-
+*****
+	1. If all the classes presented in same package then we need not to write "import" statement.
+
+Sample.java
+	package com.oracle;
+	public class Sample
+	{
+....
+	}
+
+
+Test.java
+
+	package com.oracle;
+	public class Test
+	{
+	public void getInfo()	
+	{
+Sample s = new Sample();
+....
+....
+	}
+	}
+
+
+	2. If we write import com.oracle.*; then all the classe of com.oracle package can be imported into our main class.
+
+
+	package com.nit.app;
+	import com.oracle.Sample;
+	import com.oracle.Test;
+
+	public class TestApp
+	{
+.....
+....
+	}
+
+	OR
+
+	package com.nit.app;
+	import com.oracle.*;	
+
+	public class TestApp
+	{
+.....
+....
+	}
