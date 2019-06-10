@@ -1,0 +1,130 @@
+Exception :
+*********
+	Exception is a  runtime object thrown at runtime by JVM whenever JVM finds a abnormal results.
+
+	In JDK for every obnormal result there is a exception java class.
+
+	Whenever JVM finds a abnormal results it does the following jobs.
+		=> Stop the flow of execution.
+		=> Creates related java class object, throws at runtime.
+	
+
+Exceptions are of two types .
+
+	1.Unchecked or Runtime Exception :- These are the Exceptions which are checked by the JVM at Runtime.
+					
+
+		Ex :- ArrayIndexOutOfBoundsException
+		      NumberFormatException
+		      NullPointerException
+		      ArithmeticException etc..
+
+     2. checked or Compiletime Exception :- These are the Exceptions which are checked by the JVM at Compiletime.
+					
+
+		Ex :- IOException
+		      FileNotFoundException
+		      ClassNotFoundException
+		      InstatiationException etc..
+
+All the exception classes are the sub classes of "java.lang.Exception" class.
+
+	refer "ExceptionTypes.png" Diagram
+
+Understanding UncheckedExceptions :-
+*********************************
+
+ArrayIndexOutOfBoundsException :-
+******************************
+ArrayIndexOutOfBoundsException will be thrown by the JVM whenever are tying to access an element from the invalid index of an array.
+
+Ex: -
+	int[] count = {10,20,30};
+	sysout(count[0]); o/p 10
+
+	sysout (count[7]); o/p : JVM throws ArrayIndexOutOfBoundsException
+
+refer UncheckedEx1.java
+
+NumberFormatException :-
+*********************
+NumberFormatException will be thrown by the JVM whenever jvm unable to type cast .
+
+Ex :-
+int count = Integer.parseInt("10.5");// JVM throws NumberFormatException
+
+refer UncheckedEx2.java
+
+NullPointerException :-
+*******************
+JVM throws NullPointerException whenever we call 'method' on 'null reference'.
+
+Ex:-
+***
+String s = null;
+System.out.println(" Length : "+s.length()); // JVM throws NullPointerException 
+
+refer UncheckedEx3.java
+
+ArithmeticException :-
+*****************
+JVM throws ArithmeticException whenever we are trying to devide a number by Zero.
+
+int count = 10/0; // JVM throws ArithmeticException 
+
+
+Understanding Exception Handling :-
+********************************
+In general whenever JVM throws an Exception , it stops the flow of execution.
+
+ExceptionHandling  is a concept of handling the exceptions so that we can maintain the flow of execution.
+
+In JVM Exception Hanlding can be done by using following keywords.
+
+1.	try 
+	{
+	...
+	} Block
+
+2.	catch(..) {
+	} Block
+
+3.	finally
+	{	
+	....
+	...
+	}
+
+4. throws keyword
+
+5. throw keyword.
+
+
+Understanding try and catch blocks :-
+**********************************
+
+try
+{
+....
+....
+}
+=> Within a try block we should write a logic which might causes the Exception.
+=> After try block which should define either catch{} block or finally{} block.
+=> One try{...} block can have any number of catch blocks.
+
+
+
+catch(Exception exp ){ ...}    Block
+***********************
+=> catch - block is used to handled the exception.
+=> For every Exception we can define one catch - block.
+=> One try block can be followed by any number of catch blocks but at a time only once catch block will be executed.
+=> Allways the catch-blocks should be defined from most specific to most general.
+
+finally {...} block :-
+*******************
+=> finally{..} block will be executed allways , wheather the exception raised or not.
+=> finally{..} block is mainly used to write resource deallocation logic. 
+
+for ex : closing connection,close input , output streams etc..
+
