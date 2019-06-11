@@ -1,0 +1,106 @@
+Checked Exceptions :-
+*******************
+=> The exception which is a sub class of "java.lang.Exception" class is called Checked Exception.
+
+=> Checked Exception can be verified at compile time so all the checked exceptions should be handled at compile time.
+
+Ex : ClassNotFoundException,InstantiationException, IllegalAccessException
+
+
+UN-Checked Exceptions :-
+*******************
+=> The exception which is a sub class of "java.lang.RuntimeException" class is called UN-Checked Exception.
+
+=> Checked Exception can be verified at run time so all the unchecked exceptions need not to handled at compile time.
+
+Ex : NullPointerException, ArithmeticException etc..
+
+
+throws keyword :-
+**************
+
+=> throws keyword can be used to declare the exception.
+
+=> throws keyword  can declared checked and unchecked exceptions.
+
+=> When the method declares a checked exception, the caller should handle the exception.
+
+=> When the method declares a UN-Checked exception, the caller need not to handle the exception.
+
+=> throws keyword will allways indicates to caller , what kind of exception a method can be thrown. So that caller can handle exception.
+
+For  Ex :
+
+As we discussed in "java.lang.Class" has 
+
+  1. public static Class forName(String) throws ClassNotFoundException;
+	
+	The "forName(String)" will throw ClassNotFoundException if we pass invalid class name.
+
+  
+  2.public Object newInstance() throws InstantiationException, IllegalAccessException;
+	
+	In generally the newInstance() creates the loaded class Object using defaultconstructor.
+
+	If the loaded class does not contains the default constructor then newInstance() method throws the InstantiationException.
+
+	If the loaded class default constructor as private then the newInstance() method throws IllegalAccessException.
+
+
+ClassNotFoundException , InstantiationException ,IllegalAccessException exceptions are checked exceptions so that all these exceptions should be handled at compile time.
+
+
+Understanding 'throw' keyword :-
+******************************
+
+=> 'throw' keyword can used to forward  the exceptions .
+
+=>  The 'throw' can stop the flow of execution and forwards the exception to the caller.
+
+=>  throw keyword can forward checked and un checked exceptions.
+
+=>  Checked exceptions should be declared on the method header before forwarding using "throw" keyword.
+
+=> UNChecked exception can be forwarded directly using "throw" keyword.
+
+=> For forwarding UnChecked Exception declaration is not needed.
+
+
+Userdefined Exceptions :-
+**********************
+
+=> The Exceptions  which are developed by the  Programer can be called as UserDefinedExceptions.
+
+=> UserDefined Exceptions can be checked or unchecked exception
+
+Procedure to develop Userdefined Exceptions :-
+*******************************************
+
+1. Develop a java class by extending either "java.lang.Exception" OR  "java.lang.RuntimeException" class.
+
+2. Define the default constructor within the java class.
+
+3. Define the parameterized constructor which is taking "String" as a parameter and call the super class parameterized constructor.
+
+	Calling super class constructor help us to display exception message in a simple way.
+	
+
+InsuffientBalanceException.java
+
+package com.oracle.exp;
+
+public class InsuffientBalanceException extends Exception
+	{
+public InsuffientBalanceException()
+{
+	super();
+}
+
+public InsuffientBalanceException(String expDesc)
+{
+super(expDesc);
+}
+	}
+
+
+
