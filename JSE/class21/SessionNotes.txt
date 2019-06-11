@@ -11,7 +11,7 @@ UN-Checked Exceptions :-
 *******************
 => The exception which is a sub class of "java.lang.RuntimeException" class is called UN-Checked Exception.
 
-=> Checked Exception can be verified at run time so all the unchecked exceptions need not to handled at compile time.
+=> UnChecked Exception can be verified at run time so all the unchecked exceptions need not to handled at compile time.
 
 Ex : NullPointerException, ArithmeticException etc..
 
