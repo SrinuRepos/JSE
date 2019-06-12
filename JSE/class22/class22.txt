@@ -1,0 +1,155 @@
+
+Understanding  "java.lang.String" :-
+*********************************
+=> java.lang.String is a predefined java class.
+
+=> The "java.lang.String" is representing a sequence of charecters. 
+
+=> Within the "String" every charecter is uniqly identified by an index number. Here the index number startwith 0 and ends with "n-1".
+
+=> Actually we have an interface as "java.lang.CharSequence" which is declaring a specification as sequence of charecters.
+
+=> This specificication is implimented "String" ,"StringBuffer" , "StringBuilder" class. 
+
+=> Which means the "String" ,"StringBuffer" , "StringBuilder" are the sub classes of "java.lang.CharSequence".
+
+
+=> java.lang.String :-
+   ****************
+
+The String object can be created in two ways.
+
+	1. Using literal :-
+	   *************
+
+		String msg = "welcome";
+
+If we create String object using literal then JVM creates the object within the String Constant Pool.
+If the String object is already exist in the String Constant pool then JVM returns the same object . 
+
+Ex: String s1 = "Welcome";
+    String s2 = "Welcome";
+	Here s1 & s2 pointing to same object in String Constant Pool.
+
+
+	2. Using  "new" keyword :-
+	   *********************
+		
+		String  message = new String("Welcome");
+
+If we use new keyword  then JVM will always creates the new object within the Heap.
+
+	Ex: String s1 = new String("Welcome");
+    	    String s2 = new String("Welcome");
+	Here s1 & s2 pointing to diffrenet objects in String constanct pool.
+
+return StringConstantPool diagram.
+
+
+
+*** String is an immutable object. Which means we can not change the state of a String object directly.
+
+	Ex : String s1 = "Welcome";
+	     s1.concat(" To Hyd") ;
+	   System.out.println(s1); //o/p Welcome: 
+
+	Here s1 won't be updated directly because it is an immutable object.
+
+	If you would like to update the value, we should explicitly assign to s1.
+		s1 = s1.concat(" To Hyd") ; // o/p Welcome To Hyd
+	     
+
+String Comparission :-
+******************
+We can compare String in three ways 
+
+1. public boolean equals(String) :- It will compare content not the references. returns true if the both String's content is same.
+
+String s1 = "Srinu";
+String s2 = new String("Srinu");
+
+if(s1 == s2) returns false.
+
+if(s1.equals(s2)) returns true
+
+Note :- 
+*****
+	Here equals(String) method is case Sencitive.  So we can use public boolean equalsIgnoreCase(String) if we don't want to consider case sensitiness.
+
+
+
+2. public int compareTo(String) :- It will compare content not the references. 
+
+The compareTo(String) method 
+reuturns 0  if both the String's are equals.
+returns +ve number if the 1st String is greater than 2nd String
+return -ve number if the 1st String is less than 2nd String.
+
+String s1 = "Srinu";  
+String s2 = "Venu";
+String s3 ="Srinu";
+
+
+s1.compareTo(s2) => return -ve number
+
+s2.compareTo(s1) => return +ve number
+
+s1.compareTo(s3) => return's 0
+
+Note :-
+****
+Similarly we have   public int compareToIgnoreCase(String);
+	
+3. == operator :-
+   ***********
+"==" operator will allways checks the refercens not the content.
+
+String s1 = "Srinu";
+String s2 = new String("Srinu");
+String s3 = "Srinu";
+
+if(s1 == s2) returns false.
+
+if(s1 == s3) returns true.
+
+***************************************
+How to develop immutable class ?
+
+immutable class:
+***************
+The state of a immutable class object can not be modified, which is called immutable class.
+
+Procedure to develop immutable class :
+
+1. Make class as final so that class can not be inherited.
+2. Declare private final variables. So that once we assign data which can not be updated.
+3. Initialize the final variables in constructor.
+4. Don't write setter methods.
+5. Define getter methods. To access the variables.
+
+***6. If the immutable class is having mutable objects return cloneable object from the getter method.
+
+
+
+Object Cloning in Java:-
+**********************
+
+The object cloning is a way to create exact copy of an object. The clone() method of java.lang.Object class is used to clone an object.
+
+=> The cloning operation can be perfomed only on Cloneable objects.
+=> If we try to perform cloning operation on non cloneable objects then JVM throws CloneNotSupportedException
+
+java.lang.Cloneable :-
+******************
+java.lang.Cloneable is a marker interface, which does not have any abstract methods.
+
+Which ever java class implemets java.lang.Cloneable interface, JVM treats those  object's are cloneable objects.
+
+So on the clonable objects cloning can be performed.
+
+
+The clone() method is defined in the Object class. 
+Syntax of the clone() method is as follows:
+
+protected Object clone() throws CloneNotSupportedException 
+
