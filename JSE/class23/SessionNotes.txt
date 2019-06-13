@@ -1,0 +1,272 @@
+Understanding the methods of String :-
+***********************************
+1.public int length() :- Returns the length of the String .
+
+String s1 = "Srinu";
+s1.length() o/p 5
+
+
+2. public boolean isEmpty() :- returns true if the String is empty.
+
+	String s1 = "";
+	s.isEmpty() o/p true.
+
+3.  public String trim() :- this will remove leading and tailing speces of a String. 
+
+String s1 ="  Srinu Np  ";
+
+s1.length() o/p 12
+
+s1 = s1.trim(); o/p "Srinu Np"
+
+s1.length()  o/p 8
+
+
+
+4. public char charAt(int) :- It will return the charecter from the specified index.
+	
+String s1 = "Srinu";
+
+sysout(s1.charAt(3)); o/p 'n'
+	
+
+5.public boolean startsWith(String) :-
+
+It will return true if the String prefix same.
+
+String s1 ="Sbit";
+
+sysout(s1.statsWith("Sb")); return true
+
+
+6.public boolean endsWith(String)
+
+It will return true if the String suffix same.
+
+String s1 ="Sbit";
+
+sysout(s1.endsWith("it")); return true
+
+
+ 
+7. public String substring(int) :- returns the String from the specified index number.
+
+String s1 = "Srinu Np";
+
+sysout(s1.subString(2)) ; o/p inu Np
+
+
+8.public String substring(int, int) :
+
+returns the String  between specified index numbers.
+includes the starting index and excludes the ending index.
+
+String s1 = "SrinuNp";
+
+sysout(s1.subString(0,5)) ; o/p Srinu
+
+ 
+9.public String concat(java.lang.String) :- concat can be used to append the String.
+
+String s1 ="Hi";
+
+String s2 =s1.concat(" Everyone");
+
+sysput(s2); o/p Hi Everyone.
+
+
+10.public String replace(char, char) :- Retplaces the first char with the second char.
+
+String s1 = "SSSrsinu";
+
+sysout(s1.replace('S','A')); o/p AAArsinu
+
+
+11.public java.lang.String replaceAll(java.lang.String, java.lang.String) : replaces the first String with second String.
+
+String s1 = "Hi";
+
+s1 = s.replaceAll(s1,"Hello");
+
+sysout(s1); o/p Hello
+
+ 
+12.public java.lang.String[] split(java.lang.String) :- Split the String with the Specified charecter.
+
+String s1 ="12-JAN-2016"
+
+String[] dateArray = s1.split("-");  
+
+for(int i = 0; i<dateArray.length ; i++)
+	{
+sysout(dateArray[i]);
+	}
+
+o/p dateArray ={"12","JAN","2016"}
+
+
+
+13.public java.lang.String toLowerCase();
+
+Converts the String into lowerCase.
+
+String s1 = "SRINU";
+sysout(s1.toLowerCase()) ; o/p srinu
+
+ 
+14.public java.lang.String toUpperCase()
+
+Converts the String into uppercase
+
+String s1 = "srinu";
+sysout(s1.toUpperCase()) ; o/p SRINU
+
+15. public static  String valueOf(char) : convert char into String
+
+	String s1 = String.valueOf('A'); 
+
+
+16. public static  String valueOf(int) : convert interger into String
+
+int count = 10;
+
+String s1 = String.valueOf(count); 
+
+just like :- s1 = "10";
+
+
+similarly the valueOf(..) method is overloaded for all the datatypes.
+
+17. public String intern()
+
+It can be used to return string from memory, if it is created by new keyword. 
+It creates exact copy of heap string object in string constant pool.
+
+varargs ...
+************
+
+=> varargs can indicated by three dots i.e  ...
+
+=> varargs is just like an array. 
+
+	public void display(String... name)
+	{
+....
+....
+	}
+
+=> varargs can accept none or any number of values.
+
+	display() ; //is valid
+
+	display("Srinu");//is Valid
+
+	display("Srinu","Venu","Akash");
+
+=> The vararg... must be the last parameter within the method.
+
+
+
+
+
+public String join(String deliminator,String... ) :- It will combine morethan one String with the given deliminator.
+
+String msg = String.join("-","Srinu","Venu","Akash");
+
+sysout(msg); o/p "Srinu-Venu-Akash"
+
+
+
+java.util.StringTokenizer :-
+*************************
+The StringTokenizer can devide the String into multiple tokens.
+
+StringTokenizer st = new StringTokenizer("My Name IS Srinu");
+
+
+public boolean hasMoreTokens() :- returns true if there tokens.
+
+public java.lang.String nextToken() :- moves the cursor to next token and returns the value.
+
+
+public String toString() :-
+************************
+
+=> The "toString()" method is avaialable within the "java.lang.Object" class. 
+=> This "toString()" method can able print the address of the object.
+
+Sample s = new Sample();
+sysout(s); //Internally JVM calls it as   s.toString()
+
+
+=> If we override the "toString()" method within our java class . We can return State Of an Object.
+
+refer "ToStringEx.java".
+
+
+
+java.lang.StringBuffer :-
+**********************
+
+Java StringBuffer class is used to created mutable (modifiable) string. 
+
+The StringBuffer class in java is same as String class except it is mutable i.e. it can be changed.
+
+
+Note: Java StringBuffer class is thread-safe i.e. multiple threads cannot access it simultaneously. So it is safe and will result in an order.
+
+Constructors :- 
+************
+
+StringBuffer(): creates an empty string buffer with the initial capacity of 16.
+
+StringBuffer(String str): creates a string buffer with the specified string.
+
+StringBuffer(int capacity): creates an empty string buffer with the specified capacity as length.
+
+ methods StringBuffer :-
+**********************
+public synchronized StringBuffer append(String s): is used to append the specified string with this string. The append() method is overloaded like append(char), append(boolean), append(int), append(float), append(double) etc.
+
+public synchronized StringBuffer insert(int offset, String s): is used to insert the specified string with this string at the specified position. The insert() method is overloaded like insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double) etc.
+
+public synchronized StringBuffer replace(int startIndex, int endIndex, String str): is used to replace the string from specified startIndex and endIndex.
+
+public synchronized StringBuffer delete(int startIndex, int endIndex): is used to delete the string from specified startIndex and endIndex.
+
+public synchronized StringBuffer reverse(): is used to reverse the string.
+
+public int capacity(): is used to return the current capacity.
+
+public char charAt(int index): is used to return the character at the specified position.
+
+public int length(): is used to return the length of the string i.e. total number of characters.
+
+public String substring(int beginIndex): is used to return the substring from the specified beginIndex.
+
+public String substring(int beginIndex, int endIndex): is used to return the substring from the specified beginIndex and endIndex.
+
+
+
+
+
+
+java.lang.StringBuilder :-
+************************
+It is just like StringBuffer. 
+
+StringBuffer is a Thred-Safe where as StringBuilder is not a Thre-Safe.
+
+Which means the String Builder can allow more than one thread at a time.
+
+All the methods of StringBuffer are available in StringBuilder without "synchronized" keyword.
+
+Ex :-
+
+public StringBuffer append(String s): is used to append the specified string with this string. The append() method is overloaded like append(char), append(boolean), append(int), append(float), append(double) etc.
+
+public StringBuffer insert(int offset, String s): is used to insert the specified string with this string at the specified position. The insert() method is overloaded like insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double) etc.
+
+public StringBuffer replace(int startIndex, int endIndex, String str): is used to replace the string from specified startIndex and endIndex.
+
+etc...
