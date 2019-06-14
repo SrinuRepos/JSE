@@ -1,0 +1,92 @@
+				Wrapper classes
+				***************
+In java every primitive data type is represented by Wrapper Type. 
+	byte  => java.lang.Byte
+	short => java.lang.Short
+	int   => java.lang.Integer
+	long  => java.lang.Long
+	float => java.lang.Float
+	double=> java.lang.Double
+	char  => java.lang.Charecter
+
+All the wrapper classes are sub classes of "java.io.Serializable" interface. so that all the wrapper classes are serializable object's. 
+	
+
+Need of Wrapper Classes
+
+1. They convert primitive data types into objects. Objects are needed if we wish to modify the   arguments passed into a method (because primitive types are passed by value).
+
+2. The classes in java.util package handles only objects and hence wrapper classes help in   this case also.
+
+3. Data structures in the Collection framework, such as ArrayList and Vector, store only 	objects (reference types) and not primitive types.
+
+4. An object is needed to support synchronization in multithreading.
+		
+			Autoboxing and Unboxing in Java
+			******************************
+JVM take care of AutoBoxing and UnBoxing .
+
+Autoboxing: Converting a primitive value into an object of the corresponding wrapper class is called autoboxing.
+	Ex:
+	int count = 10;
+	Integer a = count;
+
+	
+
+Unboxing: Converting an object of a wrapper type to its corresponding primitive value is called unboxing. 
+	Ex:
+	Intger a = new Integer(10);
+	int b = a;
+
+
+			Generics
+			********
+Understanding Generics :-
+**********************
+
+In Java using Generics we can make a class as type Safe.
+
+The Generic can be represented as "<T>".  Here the "T" can accept any type of data.
+
+Generic type  for int       => <Interger> Here the generic accept only integer data.
+Generic type  for float     => <Float>
+Generic type  for double    => <Double>
+
+etc..
+
+Generic type can be applied to Class or Variable or Method.
+
+
+Working with Generic Classes :-
+*****************************
+
+public class Sample<T> 
+{
+private T data; 
+
+public Sample(T data){
+this.data = data;
+}
+
+public void getData()
+	{
+System.out.println("\n\n From getData() : "+data.getClass());
+System.out.println(" data : "+data);
+
+	}
+
+}
+
+SampleCode :-
+***********
+Sample<Integer> s1 = new Sample<Integer>(10);
+s1.getData();
+
+Sample<Float> s2 = new Sample<Float>(12.5f);
+s2.getData();
+
+Sample<String> s3 = new Sample<String>("Srinu");
+s3.getData();
+
+
+*** We can also apply genrics at interface level.
