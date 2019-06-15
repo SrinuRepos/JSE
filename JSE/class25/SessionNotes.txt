@@ -1,0 +1,174 @@
+			MultiThreading :-
+			**************
+MultiTasking :- 
+************
+=> Executing multiple task simultaneously can be called as MultiTasking.
+
+MultiTasking can be achieved in two ways.
+	
+	1.Process Based Multi tasking (Multi Processing).
+	2.Thread Based Multi tasking (Multi Threading).
+
+	
+Process Based Multi tasking :-
+***************************
+
+=> Process is a heavy weight.
+=> Process can not shares the memory.
+=> Cost of communication between the processes would be very high.
+=> Context swithing between the processes will take more time.
+
+That is the reason we will go with Thread based multi tasking.
+
+Thread Based Multi tasking (Multi Threading) :-
+***************************
+
+=>Thread is a small unit of a process.
+=>Thread is a light weight object.
+=>Thread shares the memory.
+=>Cost of communication between the processes would be very low.
+=>Context swithing between the processes will take less time.
+
+=>In Generally the Threads execution will be taken care by JVM.
+=>In JDK we have the concept called as ThreadScheduler. Which is going to shedule the threds.
+
+refer multithreading diagram .
+
+Thread life cycle :-
+*****************
+
+The Thread life cycle is devided into 4 states.
+
+1. New State
+
+2. Runnable or Running State
+
+3. Non Runnable State
+
+4. Termination State.
+
+refer ThreadLifeCycle diagram.
+
+
+Creating Thread : -
+***************
+
+=> We can create Thread in two ways 
+
+	1. By using "java.lang.Thread" class.
+	2. By using " java.lang.Runnable" interface.
+	3. By using " java.lang.Callable" interface
+java.lang.Thread class :-
+***********************
+=> java.lang.Thread is an abstract class which is internally implements " java.lang.Runnable" interface.
+
+=> java.lang.Thread class has given methods which are used to start() the thread and to do other operations on thread.
+
+Constructors :-
+************
+
+public Thread()
+
+public Thread(Runnable rs) :- this constructor can be used whenever we develop a thread using "java.lang.Runnable" interface.
+
+
+The "java.lang.Thread" class having  an abstract method as "public void run()"  within this method we will implement actual thread implementation logic.
+
+=>This run() method will automatically called by the JVM once the Thread Schedular schedules the thread.
+
+
+"java.lang.Runnable" interface :-
+******************************
+=> " java.lang.Runnable" interface has abstract method as "public abstract void run() ".
+
+=>  If we develop a class by implementing "Runnable" interface  then our class instance can be act as a thread by default.
+
+=>  To make our class instance as a thread then we need pass this object as a parameter to the "java.lang.Thread" constructor.
+
+
+public class Sample implements Runnable
+	{
+public void run()
+	{
+....
+....
+	}
+	}
+
+AppCode :-
+**********
+
+Runnable r = new Sample();
+Thread t = new Thead(r);
+t.start();
+
+
+Sleep method in java
+**********************
+
+The sleep() method of Thread class is used to sleep a thread for the specified amount of time.
+
+Syntax of sleep() method in java
+
+The Thread class provides two methods for sleeping a thread:
+
+public static void sleep(long miliseconds)throws InterruptedException
+public static void sleep(long miliseconds, int nanos)throws InterruptedException
+
+=> The "java.lang.Thread" class has the following method to get the name of the Thread :-
+
+public static Thread currentThread() :- Which will returns curretly running thread object.
+
+public String getName() :-  It returns the Thread name.
+
+public void setName(String) :- This is used to set the name to the Thread.
+
+
+=> Single Task is developed by multiple Threads :-  refer ex1
+   *******************************************	
+
+
+Can we start a thread twice
+***************************
+
+No. After starting a thread, it can never be started again. If you does so, an IllegalThreadStateException is thrown. In such case, thread will run once but for second time, it will throw exception.
+
+Let's understand it by the example given below:
+
+public class SampleThread extends Thread{  
+ public void run(){  
+   System.out.println("running...");  
+ }  
+ public static void main(String args[]){  
+  SampleThread  t1=new SampleThread();  
+  t1.start();  
+  t1.start();  
+ }  
+}  
+
+output 
+       running
+       Exception in thread "main" java.lang.IllegalThreadStateException
+
+
+The join() method
+******************
+The join() method waits for a thread to die. In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task.
+
+Syntax:
+
+public void join()throws InterruptedException
+public void join(long milliseconds)throws InterruptedException
+
+
+Naming Thread and Current Thread
+********************************
+Naming Thread
+
+The Thread class provides methods to change and get the name of a thread. By default, each thread has a name i.e. thread-0, thread-1 and so on. By we can change the name of the thread by using setName() method. The syntax of setName() and getName() methods are given below:
+
+public String getName(): is used to return the name of a thread.
+public void setName(String name): is used to change the name of a thread.
+
+
+
