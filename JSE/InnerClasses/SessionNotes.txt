@@ -1,0 +1,76 @@
+				Inner Classes :-
+				*************
+
+=> Defining the class inside the class can be called as Inner Class.
+
+Adv :-
+***
+	=> Inner Classes groups all the related classes togather.
+	=> Optimises the code.
+	=> Increases the readability of the program.
+
+Inner Classes are of Three types.
+
+	1. Nested Classes or Non Static Inner classes
+
+			a. Member Class or Inner Class
+			b. Annonymous Inner Class
+			c. Local Inner Class.
+
+	2. Static Inner Classes
+
+	3. Nestead Interfaces.
+			
+
+Member Class or Inner Class :-
+***************************
+
+=> Defining a class inside the class can be called as Member Class or Inner class.
+=> An Inner class can able to access the private members of a Outer class.
+=> To create the Inner class Object we need Outer class reference.
+
+refer MemberClassEx 
+
+Annonymous Inner Class :-
+**********************
+=> An Inner class which does not contains a name can called Annonymous Inner Class.
+=> Annonymous Inner Classes can be implemented using interface or abstract classes.
+
+=> For an Annonymous Inner class name will be decided by the JVM at compile time.
+=> JVM makes the annonymous inner class as a sub class of interface or abstract class.
+=> At run time JVM creates the object of annonymous inner class then that will be refered by super class referce.
+
+
+refer AnnonymousInnerClassEx
+
+
+Local Inner Class :-
+******************
+=> An Inner class which is defined within the method can be called as Local Inner class.
+=> The Local Inner class can not be accessible outside the method.
+=> The Local Inner classes increases the functionality of a method.
+
+refer LocalInnerClassEx
+
+
+ Static Inner Class :-
+********************
+
+=> A Static class defined within the class can be called as Static Inner Class.
+=> We can directly access Static Inner class with the help of Outer class name.
+=> The static inner class can access only the static methods of a Outer class.
+
+refer StaticInnerClassEx
+
+
+Nestead Interfaces :-
+******************
+=> Defining an interface within the interface can be called as Nestead Interface.
+=> We can access inner interface with the help of Outer interface name.
+=> Using Nestead Interfaces we can implement specific methods.
+
+refer NesteadInterfacesEx
+
+Note :-
+*****
+Nestead Interfaces can also be implemented through classes.
