@@ -1,0 +1,107 @@
+Thread Scheduler in Java
+************************
+Thread scheduler in java is the part of the JVM that decides which thread should run.
+
+There is no guarantee that which runnable thread will be chosen to run by the thread scheduler.
+
+Only one thread at a time can run in a single process.
+
+The thread scheduler mainly uses preemptive or time slicing scheduling to schedule the threads.
+
+
+Difference between preemptive scheduling and time slicing :-
+*********************************************************
+
+Under preemptive scheduling, the highest priority task executes until it enters the waiting or dead states or a higher priority task comes into existence.
+
+Under time slicing, a task executes for a predefined slice of time and then reenters the pool of ready tasks. 
+The scheduler then determines which task should execute next, based on priority and other factors.
+
+
+Synchronization in Java :-
+************************
+
+Synchronization in java is the capability to control the access of multiple threads to any shared resource.
+
+Java Synchronization is better option where we want to allow only one thread to access the shared resource.
+
+The synchronization is mainly used to
+
+1.To prevent thread interference.
+2.To prevent consistency problem.
+
+
+
+Types of Synchronization
+*************************
+
+There are two types of synchronization
+
+Process Synchronization
+
+Thread Synchronization
+
+Here, we will discuss only thread synchronization.
+
+Thread Synchronization
+
+****************
+
+The synchronized keyword can used to work with sychronization.
+
+In Java Synchronization can be applied in three ways
+
+1.by synchronized method
+2.by synchronized block
+3.by static synchronization
+
+
+Concept of Lock in Java  :-
+
+The sychronization applies lock  to object so that at a time only one thread can access the resource. Once the thread execution is completed then it releases the lock so that other thread can join.
+
+
+Understanding the problem without Synchronization
+
+	refer withoutsyncronizationapp
+
+Java synchronized method
+************************
+
+If you declare any method as synchronized, it is known as synchronized method.
+
+Synchronized method is used to lock an object for any shared resource.
+
+When a thread invokes a synchronized method, it automatically acquires the lock for that object and releases it when the thread completes its task.
+
+refer SynchronizedMethodLevelApp ex
+
+
+Synchronized block in java
+**************************
+Synchronized block can be used to perform synchronization on any specific resource of the method.
+
+Suppose you have 50 lines of code in your method, but you want to synchronize only 5 lines, you can use synchronized block.
+
+If you put all the codes of the method in the synchronized block, it will work same as the synchronized method.
+
+Points to remember for Synchronized block
+
+Synchronized block is used to lock an object for any shared resource.
+
+Scope of synchronized block is smaller than the method.
+
+Syntax to use synchronized block
+
+synchronized (object reference expression) {   
+  //code block   
+}  
+
+refer SynchronizedBlockLevelApp 
+
+Static synchronization :-
+**********************
+If we apply Synchronization on static method level then it is called Static synchronization.
+
+When we apply static synchronization then the lock will be applied at class level so that even the class has multiple objects only one thread can enter.
+
