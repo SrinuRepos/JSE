@@ -1,0 +1,91 @@
+		How Synchronization Works
+
+When a thread calls a synchronized method or block, it tries to acquire an intrinsic lock (monitor). Once a thread acquires the lock, other threads block until the lock is released.
+
+This looks okay! But there are some drawbacks for synchronization:
+
+1.Starvation: 
+  **********
+Synchronization doesn't guarantee fairness. This means that if there are many threads competing to acquire the lock, then there is a possibility that some threads don't get a chance to continue, which means starvation.
+
+2.Deadlock: 
+*********
+Calling synchronized code from other synchronized code can cause deadlocks.
+
+3. Less throughput:
+   *************** 
+Using synchronization means only one thread is executing on a particular object. In many cases, this is not necessary because it is enough to lock access to the variable only on write, and there no need to lock the variable if all the threads at the moment are reading (concurrent reads).
+
+Synchronization is good for thread safety but not optimal for concurrency.	
+
+**********************
+
+volatile => vilatile is a kerword can be applied at variable ********   level. Which guarantees that the value will be               updated in the memory directly.
+
+		How Volatile Works
+
+Volatile is said to guarantee:
+
+1.Visibility: If one thread changes a value of a variable, ************ the change will be visible immediately to other threads reading the variable. This is guaranteed by not allowing the compiler or the JVM to allocate those variables in the CPU registers. Any write to a volatile variable is flushed immediately to main memory and any read of it is fetched from main memory. That means there is a little bit of performance penalty, but that's far better from a concurrency point of view.
+
+2.Ordering: Sometimes for performance optimization, the JVM  ********** reorders instructions. This is not allowed when accessing volatile variables. Access to volatile variables is not reordered with access to other volatile variables, nor with access to other normal fields around them. This makes writes to non-volatile fields around them visible immediately to other threads.
+
+However, volatile is not suitable for some operations, like ++, --, etc. This is because these operations translate into multiple read and write instructions. 
+For example:
+public int increment() {
+    //x++
+    int tmp = x;
+    tmp = tmp + 1;
+    x = tmp;
+    return x;
+}
+
+In a multi-threaded program, such operations should be atomic, which volatile doesn't guarantee. Java SE comes with a set of atomic classes like AtomicInteger, AtomicLong, and AtomicBoolean, which can be used to solve this problem.
+
+How Atomic Classes Work
+***********************
+Java relies on machine instructions/algorithms to achieve atomicity. Prior to Java 8, Atomic classes used Compare-and-Swap. Starting in Java 8, some methods of atomic classes began using Fetch-and-Add.
+
+refer 
+https://dzone.com/articles/java-concurrency-in-depth-part-1
+
+for more information.
+
+
+		The need for Callable
+
+There are two ways of creating threads – 
+one by extending the Thread class and other by creating a thread with a Runnable. 
+
+However, one feature lacking in  Runnable is that we cannot make a thread return result when it terminates, i.e. when run() completes. 
+
+For supporting this feature, the Callable interface is present in Java.
+
+		Callable vs Runnable
+
+For implementing Runnable, the run() method needs to be implemented which does not return anything, while for a Callable, the call() method needs to be implemented which returns a result on completion. 
+
+Note that a thread can’t be created with a Callable, it can only be created with a Runnable.
+
+Another difference is that the call() method can throw an exception whereas run() cannot.
+
+Method signature that has to overridden for implementing Callable.
+
+	public Future<T> call() throws Exception;
+
+The call() method returns the results in the form of java.lang.concurrent.Future object.
+
+
+java.lang.concurrent.Future:
+****************************
+A Future interface provides methods to check if the computation is complete, to wait for its completion and to retrieve the results of the computation. 
+
+The result is retrieved using Future’s get() method when the computation has completed, and it blocks until it is completed.
+
+Future and FutureTask both are available in java.util.concurrent package from Java 1.5
+
+
+=> The callable should be used with ExecutorFramework.
+
+
+
