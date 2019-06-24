@@ -1,0 +1,9 @@
+				enum in Java
+
+Please refer notes for enum in geeks for geeks :
+
+	1.  https://www.geeksforgeeks.org/enum-in-java/
+
+	2.  https://www.geeksforgeeks.org/enum-customized-value-java/
+
+
