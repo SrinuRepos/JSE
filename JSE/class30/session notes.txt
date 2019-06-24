@@ -1,6 +1,115 @@
-				enum in Java
+			enum :-
+***
 
-Please refer notes for enum in geeks for geeks :
+=> enum is a special data type, can be used to define constants or static content.
+=> Whatever data members you declare in enum are by default "public static final" varibles.
+=> As all the data members are static final variables, it's good practice to declare all the data members in capital letters.
+=> enum can be declared within the class or outside the class.
+=> enum invokes the constructor for every data member to initialize the value.
+=> If we don't pass any value to the enum data member then the default value would be the data member name itself.
+
+  enum Color 
+    { 
+        RED, GREEN, BLUE; 
+    } 
+
+public class Test 
+{ 
+    
+    // Driver method 
+    public static void main(String[] args) 
+    { 
+        Color c1 = Color.RED; 
+        System.out.println(c1); 
+    } 
+}
+
+
+	
+=>Every enum internally implemented by using Class.
+
+/* internally above enum Color is converted to
+class Color
+{
+     public static final Color RED = new Color();
+     public static final Color BLUE = new Color();
+     public static final Color GREEN = new Color();
+}*/
+
+Enum and Inheritance :
+
+All enums implicitly extend java.lang.Enum class.
+As a class can only extend one parent in Java, so an enum cannot extend anything else.
+toString() method is overridden in java.lang.Enum class,which returns enum constant name.
+
+enum can implement many interfaces.
+values(), ordinal() and valueOf() methods :
+
+These methods are present inside java.lang.Enum.
+
+values() method can be used to return all values present inside enum.
+
+Order is important in enums.By using ordinal() method, each enum constant index can be found, just like array index.
+
+valueOf() method returns the enum constant of the specified string value, if exists.
+
+
+=> enum with constomized value :
+   **************************
+
+By default enums have their own string values, we can also assign some custom values to enums. Consider below example for that.
+
+Examples:
+
+enum  Fruits
+{
+    APPLE(“RED”), BANANA(“YELLOW”), GRAPES(“GREEN”);
+}
+In above example we can see that the Fruits enum have three members i.e APPLE, BANANA and GRAPES with have their own different custom values RED, YELLOW and GREEN respectively.
+
+Procedure :-
+
+1. We have to create parameterized constructor for this enum class.
+ 	 Why? Because as we know that enum class’s object can’t be create explicitly so for initializing   we use parameterized constructor. 
+
+And the constructor cannot be the public or protected it must have private or default modifiers. 
+	Why? if we create public or protected, it will allow initializing more than one objects. This is totally against enum concept.
+
+2.We have to create one getter method to get the value of enums.
+
+enum TrafficSignal 
+{ 
+    // This will call enum constructor with one 
+    // String argument 
+    RED("STOP"), GREEN("GO"), ORANGE("SLOW DOWN"); 
+  
+    // declaring private variable for getting values 
+    private String action; 
+  
+    // getter method 
+    public String getAction() 
+    { 
+        return this.action; 
+    } 
+  
+    // enum constructor - cannot be public or protected 
+    private TrafficSignal(String action) 
+    { 
+        this.action = action; 
+    } 
+} 
+
+testcode :-
+********
+	TrafficSignal[] signals = TrafficSignal.values();
+	for(int i = 0 ; i < signals.length ; i++)
+	{
+		System.out.println(singnals[i].getAction());
+	}	
+
+
+
+For more information you can refer following links
 
 	1.  https://www.geeksforgeeks.org/enum-in-java/
 
