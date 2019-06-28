@@ -1,0 +1,138 @@
+	Collections in Java
+	********************
+
+Collections Framework in java  can be used to manupulate the huge of amount of data.
+Collections Framework  has given predefined classes and interfaces to handle huge  amount object's.
+
+All the collection classes are available in "java.util" package.
+
+refer Collections Diagram :
+
+
+
+Methods of  java.util.Collection interface	
+	    ********************
+
+There are many methods declared in the Collection interface. They are as follows:
+
+
+1	public boolean add(Object element)	
+	is used to insert an element in this collection.
+
+2	public boolean addAll(Collection c)	
+is used to insert the specified collection elements in the invoking collection.
+
+3	public boolean remove(Object element)	
+	is used to delete an element from this collection.
+
+4	public boolean removeAll(Collection c)	is used to delete all the elements of specified collection from the invoking collection.
+
+5	public boolean retainAll(Collection c)	is used to delete all the elements of invoking collection except the specified collection.
+
+6	public int size()	
+return the total number of elements in the collection.
+
+7	public void clear()	
+	removes the total no of element from the collection.
+
+8	public boolean contains(Object element)	
+		is used to search an element.
+
+9	public boolean containsAll(Collection c) is used to search the specified collection in this collection.
+
+10	public Iterator iterator()	returns an iterator.
+
+11	public Object[] toArray() 
+		converts collection into array.
+
+12	public boolean isEmpty()	
+		checks if collection is empty.
+
+13	public boolean equals(Object element)	
+			matches two collection.
+
+14	public int hashCode()	
+		returns the hashcode number for collection.
+
+java.util.Iterator interface
+******************
+Iterator can be used to read the data from the collection.
+
+Using Iteration we can read  elements from the collection in forward direction only.
+
+Methods of java.util.Iterator interface
+
+
+There are only three methods in the Iterator interface. They are:
+
+public boolean hasNext() it returns true if iterator has more elements.
+
+public object next() it returns the element and moves the cursor pointer to the next element.
+
+public void remove() it removes the last elements returned by the iterator. It is rarely used.
+
+
+Understanding java.util.List :-
+****************************
+=> java.util.List is an interface and it is sub interface of java.util.Collection.
+=> java.util.List is an index based.
+=> The index number starts from 0 and End with n-1.
+=> The implementation classes for java.util.List is "ArrayList and LinkedList".
+
+
+
+java.util.ArrayList class
+*******************
+
+Java ArrayList class uses a dynamic array for storing the elements.It extends AbstractList class and implements List  interface.
+
+ArrayList class can contain duplicate elements.
+
+ArrayList class maintains insertion order.
+
+ArrayList class is non synchronized.
+
+ArrayList allows random access because array works at the index basis.
+
+ArrayList allows nullable values.
+
+
+Creation of ArrayList object without Generics :-
+
+If we don't apply generics then ArrayList can accept any type of data.
+
+Ex :-
+
+List list = new ArrayList();
+
+list.add(1242);
+list.add("Srinu");
+list.add("Venu");
+list.add(5000.50f);
+
+If we apply generics then ArrayList can accept only specific type of data.
+
+Ex :-
+
+List<String> list = new ArrayList<String>();
+
+list.add("Srinu");
+list.add("Venu");
+list.add(null);
+list.add("Srinu");
+
+We can access data from the Collection either using "Iterator" or Using Enhanced For Loop.
+
+The recomended way is to use Enhanced For Loop.
+
+LinkedList :-
+**********
+
+LinkedList is arranges elements using duble linked list concept.
+
+In LinkedList we will have nodes. Every Node contains data and adress pairs. 
+
+The first node contains the address of second node and so on.
+
+refer LinkedListEx
+
