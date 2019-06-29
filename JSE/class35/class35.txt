@@ -1,0 +1,114 @@
+LinkedList :-
+**********
+LinkedList is arranges elements using duble linked list concept.
+
+In LinkedList we will have nodes. Every Node contains data and adress pairs. 
+
+The first node contains the address of second node and so on.
+
+ArrayList and LinkedList are index based so that which are specific methods inorder to perform data manupulation on index based.
+
+public boolean add(int index,Object element) :- adds element on specific index
+public boolean addAll(int index,Collection c) :- adds Collection on specific index
+public boolean remove(int index,Object element) :- removes element on specific index
+public boolean set(int index,Object element) :- replaces the element on specific index
+public Object get(int index) :- returns the element from the specific index.
+public E remove(int index) :- removes element from the specific index.
+public int indexOf(Object element) :- returns the index of the specified element.
+public ListIterator<E> listIterator() :- returns the ListIterator  object.
+
+** "Iterator" can read data only in forward direction where as "ListIterator" can read in forward and backword direction.
+
+java.util.ListIterator methods 
+
+public boolean hasNext();
+public E next(); 
+
+The above two methods are used to read data in forward direction.
+
+
+public boolean hasPrevious();
+public E previous();
+The above two methods are used to read data in backward direction.
+
+
+Difference B/W ArrayList and LinkedList :-
+
+=> ArrayList follows Dynamic Array Concept to store the elements Where as LinkedList follow double linked list concept.
+
+=> Whenever we remove element from the ArrayList remaining all elements should be shifted one index before wehre as in LinkedList only one element will shift before.(Just replaces the address).
+
+=> In ArrayList data manupulation is slow where as in LinkedList it's very fast.
+
+****************************
+	Understanding hasCode() and equals() methods
+****************************
+By default, the Java super class java.lang.Object provides two important methods for comparing objects: equals() and hashcode(). 
+
+These methods become very useful when implementing interactions between several classes in large projects. 
+
+
+Method Definition and Default Implementation :-
+********************************************
+
+equals(Object obj): The default implementation provided by the JDK is based on memory location — two objects are equal if and only if they are stored in the same memory address.
+
+hashcode(): a method provided by java.lang.Object that returns an integer representation of the object memory address. By default, this method returns a random integer that is unique for each instance. This integer might change between several executions of the application and won't stay the same.
+
+java.util.List => public boolean contains(Object) :-
+		********************************
+=>  java.util.List compares both the objects are equal or not  by calling "public boolean equals(Object)" method.
+
+=>All the wraper classes overrides equals(Object)  of object class. So that all the Wrapper classes returns true for the same object.
+
+
+But in real time we maintian user defined objects in the Collection.
+To make them searchable we should override "public boolean equals(Object)" method within user defined class.
+
+But if we see ProductApp we also overriden hashCode() method. To work with List we don't need to override hashCode() method.
+
+There is a contract between hashCode() and equals(Object) method.
+
+"If two objects are equal according to the equals(Object) method, then calling the hashcode() method on each of the two objects must produce the same integer result."
+
+In Order to satify this princeple we overridden hasCode() and equals(Object) methods.
+
+You will understand more on thin in Set and Map collections.
+
+
+
+		Sorting Elements in List :
+		*************************
+
+Java Comparable interface :-
+*************************
+Java "java.lang.Comparable<T>" interface is used to order the objects of user-defined class. Which contains only one method named "public int compareTo(<T>)". It provide single sorting sequence only i.e. you can sort the elements on based on single data member only. 
+
+For example it may be rollno, name, age or anything else.
+
+
+public int compareTo(Object obj): is used to compare the current object with the specified object.
+
+We can sort the elements of:
+
+1. String objects
+2. Wrapper class objects
+3. User-defined class objects
+
+java.util.Collections class :-
+*********************
+
+java.util.Collections class provides static methods for sorting the elements of collections.
+If collection elements are of Set or Map, we can use TreeSet or TreeMap. 
+But We cannot sort the elements of List. 
+java.util.Collections class provides methods for sorting the elements of java.util.List type elements.
+
+
+Method of Collections class for sorting List elements
+
+public void sort(List<T implements Comparable> list): is used to sort the elements of List. List elements must be of Comparable type.
+
+Note: String class and Wrapper classes implements Comparable interface by default. So if you store the objects of string or wrapper classes in list, set or map, it will be Comparable by default.
+
+But for user defined object's we need to implement java.lang.Comparable Interface
+
