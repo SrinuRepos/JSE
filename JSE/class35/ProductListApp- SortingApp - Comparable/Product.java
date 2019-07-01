@@ -1,6 +1,6 @@
 package com.google.bean;
 
-public class Product implements Comparable<Product>
+public class Product  implements Comparable<Product>
 	{
 private Integer productId ;
 private String productName;
@@ -33,30 +33,14 @@ public Float getProductPrice()
 	{
 	return productPrice;
 	}
-@Override
-public int hashCode()
-{
-	return this.productId;
-}
-
-@Override
-public boolean equals(Object obj)
-{
-	Product p = (Product) obj;
-
-	if ( this.productId == p.getProductId())
-		return true;
-	else
-		return false;
-}
 
 @Override
 public int compareTo(Product p)
-	{
+{
+	return this.productId . compareTo(p.getProductId());
+	
 
-return this.productId .compareTo(p.getProductId());
-
-	/*
+/*
 The above logic same as below code
 if(this.productId == p.getProductId())
 		{
@@ -71,15 +55,13 @@ if(this.productId == p.getProductId())
 	return 1;
 	}
 	*/
-	}
+}
 
 @Override
 public String toString()
 {
-	return productId + " : "+productName + " : "+productPrice;
+	return productId + " : "+productName+ " : "+productPrice;
 }
-
-
 	}
 
 

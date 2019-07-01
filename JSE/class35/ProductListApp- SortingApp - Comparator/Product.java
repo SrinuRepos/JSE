@@ -1,6 +1,6 @@
 package com.google.bean;
 
-public class Product
+public class Product  
 	{
 private Integer productId ;
 private String productName;
@@ -33,26 +33,13 @@ public Float getProductPrice()
 	{
 	return productPrice;
 	}
-@Override
-public boolean equals(Object obj)
-{
-	Product p = (Product) obj;
 
-	if(this.productId == p.getProductId())
-		{
-	return true;
-		}
-	else
-	{
-	return false;
-	}
-	
-}
+
 
 @Override
-public int hashCode()
+public String toString()
 {
-	return this.productId;
+	return productId + " : "+productName+ " : "+productPrice;
 }
 	}
 

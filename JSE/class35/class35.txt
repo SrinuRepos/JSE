@@ -112,3 +112,39 @@ Note: String class and Wrapper classes implements Comparable interface by defaul
 
 But for user defined object's we need to implement java.lang.Comparable Interface
 
+
+java.util.Comparator interface
+********************
+
+Java java.util.Comparator<T> interface is used to order the objects of user-defined class.
+
+It provides multiple sorting sequence i.e. you can sort the elements on the basis of any data member, for example rollno, name, age or anything else.
+
+java.util.Comparator<T> method is :-
+
+public int compare(T obj1,T obj2): compares the first object with second object.
+
+
+The following method of "java.util.Collections" class  can be used for sorting Comparator :
+
+public void sort(List<T> list, Comparator c): is used to sort the elements of List by the given Comparator.
+
+
+Diff between java.lang.Comparable and java.util.Comparator :-
+*************************************
+
+1) Comparable provides single sorting sequence. In other words, we can sort the collection on the basis of single element such as id or name or price etc.
+
+	Comparator provides multiple sorting sequence. In other words, we can sort the collection on the basis of multiple elements such as id, name and price etc.
+
+
+2) Comparable affects the original class i.e. actual class is modified.	
+	Comparator doesn't affect the original class i.e. actual class is not modified.
+
+
+3) Comparable provides compareTo(T) method to sort elements.	
+	Comparator provides compare(T obj1,T obj2) method to sort elements.
+
+
+4) Comparable is found in java.lang package.	
+	Comparator is found in java.util package.
