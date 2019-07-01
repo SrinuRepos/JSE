@@ -4,7 +4,7 @@ LinkedList is arranges elements using duble linked list concept.
 
 In LinkedList we will have nodes. Every Node contains data and adress pairs. 
 
-The first node contains the address of second node and so on.
+The first node contains the address of second node and so on  .
 
 ArrayList and LinkedList are index based so that which are specific methods inorder to perform data manupulation on index based.
 
