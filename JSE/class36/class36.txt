@@ -1,0 +1,68 @@
+
+java.util.Queue :-
+***************
+
+=> Queue follows the concept of First In Firt Out (FIFO).
+=> Queue is not an index based.
+=> Queue is non synchronized.
+
+The methods of "java.util.Queue" are 
+
+public abstract boolean add(E) :-  adds the element to the Queue
+public abstract boolean offer(E) :- adds the  element from the Queue
+
+public abstract E remove() :- Removes the First element
+public abstract E poll() :- Removes the First element
+
+public abstract E element() :- picks the First element the Queue
+public abstract E peek();- Picks the element from the Queue
+
+implementation classes of Queue are LinkedList and PriorityQueue.
+
+LinkedList :-
+**********
+	LinkedList extends Deque , Deque implements Queue.
+
+	Deque offers more uitility methods to operate on Queue.
+
+
+java.util.PriorityQueue is an implementation class for the Queue.
+
+A Priority does not allow nullable value.
+A priority queue relying on natural ordering also does not permit insertion of non-comparable objects.
+
+
+java.util.Set :-
+*************
+java.util.Set is not an index based. 
+java.util.Set does not allow duplicated values .
+
+The implementation classes of Set are "HashSet" , "LinkedHashSet" and "TreeSet".
+
+
+java.util.HashSet :-
+*****************
+HashSet is not an index based
+HashSet does not allow duplicated values but allows nullable value.
+HashSet does not maintains insertion Order.
+
+java.util.LinkedHashSet :-
+***********************
+LinkedHashSet is not an index based
+LinkedHashSet does not allow duplicated values but allows nullable value.
+LinkedHashSet maintains insertion Order.
+
+java.util.TreeSet :-
+*****************
+TreeSet is not an index based
+TreeSet does not allow duplicated values .
+TreeSet does not allows nullable value.
+TreeSet arranges the in assending order.
+
+
+refer 
+https://dzone.com/articles/working-with-hashcode-and-equals-in-java
+
+to understand hashCode() and equals(Object) methods.
+
+
