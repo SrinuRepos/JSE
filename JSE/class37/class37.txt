@@ -1,0 +1,92 @@
+java.util.Map<K,V> :-
+*************
+Map contains key and value pairs.
+Map allows duplicate values but it does duplicate key's.
+
+java.util.Map<K,V> methods :-
+**************************
+
+  public abstract int size();
+  public abstract boolean isEmpty();
+  public abstract boolean containsKey(java.lang.Object);
+  public abstract boolean containsValue(java.lang.Object);
+
+  public abstract V get(java.lang.Object key) :- returns value base on Key
+
+  public abstract V put(K, V) : - Used add the key value pair to the Map
+
+  public abstract V remove(java.lang.Object key) :- removes key and value pair based on key.
+
+  public abstract void putAll(java.util.Map<? extends K, ? extends V>) :- Adds another Map into the Map.
+
+  public abstract void clear();
+
+  public abstract java.util.Set<K> keySet() :- Returns all the keys of a Map into the set.
+
+
+  public abstract java.util.Collection<V> values() :- Returns all the values of a Map.
+
+
+  public V getOrDefault(java.lang.Object key, V) :- If the key exist returns the values otherwise the default value will 							be return.
+
+  
+'
+  public abstract java.util.Set<java.util.Map$Entry<K, V>> entrySet() :- This will returns "Set<Map.Entry>" object. 
+
+
+Map.Entry is a nested interface , using which we can access data from the Map. Every Map.Entry object represents a key and value pair.
+
+Map.Entry has given following method.
+
+public Object getKey() :- returns the key.
+public Object getValue() :- returns the value.
+
+*****************************************
+=> There are two ways to read data from the Map.
+
+	1. When we call keySet() method on the "Map" object , it will return all the "keys of a Map" in the form of 	"Set<K>". 
+	Once we iterate the Set<K> we can get the key. 
+	Once we have a key we can get the value from the Map using "public V get(K)" method.
+
+	2. When we call entrySet() method on the "Map" obje ,it will return "Set<Map.Entery<k,v>>" object's.
+	   Once we iterate the "Set<Map.Entery<k,v>>" we can get the "Map.Entry<K,V>" object.
+	   So on the Map.Entry we can call getKey(), getValue() methods to access the data.
+		
+
+	
+
+=> HashMap ,LinkedHashMap , TreeMap are the implementation classes of Map interface.
+
+java.util.HashMap :-
+*****************
+HashMap allows key and value pairs.
+HashMap allows duplicate values but does not allow duplicate keys.
+HashMap allows nullable key and value's.
+HashMap does not maintains insertion Order.
+
+java.util.LinkedHashMap :-
+*****************
+LinkedHashMap allows key and value pairs.
+LinkedHashMap allows duplicate values but does not allow duplicate keys.
+LinkedHashMap allows nullable key and value's.
+LinkedHashMap maintains insertion Order.
+
+java.util.TreeMap :-
+*****************
+TreeMap allows key and value pairs.
+TreeMap allows duplicate values but does not allow duplicate keys.
+TreeMap does not allow nullable key but allows nullable values.
+TreeMap assigns the data in assending order based on the key.
+
+
+Internal Working of HashMap ::
+
+https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
+
+
+
+
+
+
+
+
