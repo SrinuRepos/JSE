@@ -1,0 +1,63 @@
+java.util.Vector<T>
+***************
+https://www.geeksforgeeks.org/java-util-vector-class-java/
+
+
+java.util.Stack<T>
+****************
+refer https://www.geeksforgeeks.org/stack-class-in-java/
+
+java.util.Enumeration<T>
+***********************
+
+refer https://www.tutorialspoint.com/java/java_enumeration_interface.htm
+
+
+
+java.util.Hashtable :-
+******************
+=> Hashtable is a sub class of Map.
+=> Hashtable extends Dictionery, implements Map.
+=> Hashtable allows key and value pairs.
+=> Hashtable does not allow nullable key's as well as value's.
+=> Hashtable allows duplicate values but does not allow duplicate key's.
+=> Hashtable does not maintains the insertion Order.
+
+java.util.Properties :-
+*********************
+=> Properties class is a subclass of Hashtable.
+=> Properties class allows only the String type of key and value pairs.
+=> Properties class does not allows generics.
+=> Properties class does not allows nullble key and value pairs.
+=> Properties class allows duplicate values but does not allows duplicate key's.
+=> Properties class does not maintain insetion Order.
+
+
+We can use all the methods of "java.util.Map" in " java.util.Properties" class
+
+public void setProperty(String key,String value) : adds key and values pair to the Property.
+public String getProperty(String key) : returns value based on key.
+
+=> Using Properties class we can also get all the System properties.
+
+
+Properties props = System.getProperties();
+
+
+** using Properties class we can read the data from properties file.
+
+The "java.util.Properties" class has given following method 
+	
+public void load(InputStream) throws IOException :- This is used to read the data from properties file.
+
+
+** Procedure to develop an application which reads data from properties file.
+
+	1. Create a Properties file and writes key and value pairs.
+
+		dbinfo.properties 
+		*****************
+		username = srinu
+		password = srinu123
+
+	2. Develop a java program to read data from Properties file.
