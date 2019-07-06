@@ -1,0 +1,26 @@
+Need of Concurrent Collections in java
+
+https://www.geeksforgeeks.org/need-concurrent-collections-java/
+
+ConcurrentHashMap in java:
+
+https://www.geeksforgeeks.org/concurrenthashmap-in-java/
+
+How ConcurrentHashMap Works Internally in Java
+
+https://dzone.com/articles/how-concurrenthashmap-works-internally-in-java
+
+
+Diff between HashMap & ConcurrentHashMap:
+
+https://www.geeksforgeeks.org/difference-hashmap-concurrenthashmap/
+
+
+Fail Fast and Fail Safe Iterators in Java:
+
+https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/
+
+
+Java BlockingQueue examples
+
+https://www.mkyong.com/java/java-blockingqueue-examples/
