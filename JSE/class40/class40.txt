@@ -1,0 +1,81 @@
+Reflection API :-
+***************
+=> Reflection API can be used to get the meta information about the class.
+=> Using Reflection API we can change the runtime behaviour of a java class object.
+=> Which means we can access the private member of a java class outside the class.
+
+JDK has given "java.lang.Class" to work with reflection api.
+
+
+java.lang.Class methods :-
+***********************
+
+public Class forName(String) throws ClassNotFoundException
+
+public Object newInstance() throws InstantiationException,IllegalAccessException
+
+public String getName() returns the loaded class name
+
+public Field[] getDeclaredFields() :- Return all the declared variables of a java class.
+
+public Method[] getDeclaredMethods() :- Return all the declared Methods of a java class.
+
+public Constructor[] getDeclaredConstructors() :- Return all the declared Constructors of a java class.
+
+
+java.lang.reflect.Field :- Field class i an object oriented representation of a java class variable.
+Using Field class we can access the data of member variable.
+
+java.lang.reflect.Method :- java.lang.reflect.Method class i an object oriented representation of a java class method.
+		Using java.lang.reflect.Method class we can get the meta information about the 'method'.	
+	Using java.lang.reflect.Method we can also invoke private method.
+
+
+java.lang.reflect.Constructor :- Constructor class i an object oriented representation of a java class constructor.
+
+public Method getDeclaredMethod(String methodName , Class... paramsType) :- It is going to return method  in the form of java.lang.reflect.Method object.
+
+
+public Field getDeclaredField(String fieldName) :- It is going to return instance variable in the form of java.lang.reflect.Field object.
+
+public Constructor getDeclaredConstructor() :- It is going to return default constructor in the form of java.lang.reflect.Constructor.
+
+public Constructor getDeclaredConstructor(Class...) :- It is going to return parameterized constructor in the form of java.lang.reflect.Constructor.
+
+
+
+Accessing private methods of a java class :-
+******************************************
+
+java.lang.reflect.Method :- 
+
+
+methods of java.lang.reflect.Method :-
+
+public void setAccessible(boolean) :- If we set as true we can access the method  of a java class otherwise we can not access.
+
+public Object invoke(Object loadedClassObject , Object... methodParamValues) :- Once we call the invoke(..) method the java class method will be executed.
+
+
+Accessing private Varible of a java class :-
+******************************************
+
+java.lang.reflect.Field :- 
+
+		Field class can be used to access private member of a class.
+
+methods of java.lang.reflect.Field :-
+
+public void setAccessible(boolean) :- If we set as true we can access the variable of a java class otherwise we can not access.
+
+public Object get(Object loadedClassObject) :- return the Field Value.
+
+
+Accessing private Constructor of a java class :-
+******************************************
+public void setAccessible(boolean) :- If we set as true we can access the variable of a java class otherwise we can not access.
+
+public Object newInstance() :- Creates a Object using default constructor.
+
+public Object newInstance(Object...) :- Creates a Object using parameterized constructor.
+			  
