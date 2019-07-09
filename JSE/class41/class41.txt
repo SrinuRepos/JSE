@@ -1,0 +1,104 @@
+					IOStreams :-
+					*********
+
+Stream :- Stream is  a sequence of bytes.
+
+IOStreams are used to communicate with Input and Ouput  devices.
+
+All the IOStream classes are presented in "java.io" package .
+
+The standard input and output streams given by java are 
+
+	1.System.out
+	2.System.in 
+	3.System.error
+
+
+java.io.InputStream  :-
+********************
+InputStream is an abstract class. The child classes of an InputStream can able read the data from Source. The Source can be File or Console or Socket.
+
+=> public int read() throws IOException :- This method can be used to read the data from the input stream. If this method								 returns -1. Which indicates the end of the file.
+
+=> public void close() throws IOException :- This method is used to close the Stream.
+
+java.io.OutputStream :-
+********************	
+OutputStream is an abstract class. The child classes of the OutputStream can able write the data to the Destination. The Destination can be File or Console or Socket.
+
+=> public void write(int) throws IOException :- This method can be used write a single byte to the output stream.
+
+=> public void write(byte[]) throws IOException :- This method can be used write a array of bytes to the output stream.
+
+=> public void flush() throws IOException :- This method moves the data from the stream to file. 
+
+=> public void close() throws IOException :- This method is used to close the Stream.
+
+
+We allready know that within the Stream the data can be transfered in the form of Sequence of bytes.
+
+refer IOStreams,InputStream,OutputStream diagrams.
+
+
+java.io.FileOutputStream :-
+*************************
+=> FileOutputStream is used to write the data to the file.
+
+Constructor :-
+**********
+public FileOutputStream(String fileName) :- It will create the file with the specified name
+
+
+FileInputStream :-
+***************
+
+=> FileInputStream is used to read the data from the file.
+
+Constructor :-
+**********
+public FileInputStream(String fileName) :- It the file is not exist then it throws FileNotFoundException.
+
+
+ByteArrayOutputStream :-
+*********************
+The ByteArrayOutputStream can be used to write into more than one file.
+
+Constructor :-
+**************
+public ByteArrayOutputStream()
+
+The ByteArrayOutputStream has "public void writeTo(OutputStream) throws IOException" method to write the data to the Stream.
+
+
+SequenceInputStream :-
+*******************
+The SequenceInputStream can be used to read the data more than one file.
+
+Constructor :-
+**************
+public SequenceInputStream(InputStream , InputStream) :- This is used to read data from from two files.
+public SequenceInputStream(Enumeration) :- This is used to read data from  more than two files.
+
+Understanding HighLevel Output and Input Streams :-
+************************************************
+1. BufferedOutputStream :- 
+   ********************
+	=> BufferedOutputStream  uses to write the data to the file.
+	=> BufferedOutputStream internally uses the concept of buffer so that it increases the perfomance of the application.
+
+	Constructor :-
+	***********
+
+public BufferedOutputStream(OutputStream) :- We create the BufferedOutputStream obejct by passing OutputStream object.
+
+2. BufferedInputStream :- 
+   ********************
+	=> BufferedInputStream  used to read the data from the file.
+	=> BufferedInputStream internally uses the concept of buffer so that it increases the perfomance of the application.
+
+	Constructor :-
+	***********
+
+public BufferedInputStream (InputStream) :- We create the BufferedInputStream obejct by passing InputStream object.
+
+
