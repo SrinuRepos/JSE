@@ -1,0 +1,204 @@
+understand java.io.Serializable interface :-
+*******************************
+
+=> java.io.Serializable interface is a marker interface . which does not contain any abstract methods.
+
+=> For a java.io.Serializable interface a special meaning was defined in JVM.
+
+=> If any java class which is implementing java.io.Serializable interface  then JVM treats those object's as Serializable obejcts.
+
+=> For all the Serializable obejct JVM will some additional functionalities at run time so that all the Serializable obejct can be maintained over the network.
+
+
+Serialization :-
+*************
+
+		** Maintaining the Object State Over the network can be called as a Serialization.
+
+			OR
+
+		**  Writing the State object into the File can be called as Serialization.
+
+DeSerialization :-
+*************
+
+		**  Reading the State object from the File can be called as DeSerialization.
+
+3. java.io.ObjectOutputStream  :- 
+   **************************
+	Using ObjectOutputStream we can write the state of an object to the File.
+
+		public void WriteObject(Object) throws IOException :- writes the State of object to the file.
+		public void flush()
+		public void close()
+
+ObjectOutputStream can write the Object state to the file only when it is Serialization object otherwise throws SerializationException.
+
+	Constructor :-
+	************
+	public ObjectOutputStream(OutputStream) 
+
+4. ObjectInputStream 
+   *****************
+	Using ObjectInputStream we can read the state of an object from the File.
+
+	public Object readObject() throws IOException,ClassNotFoundException 
+
+	public voic close();
+
+	Constructor :-
+	************
+	public ObjectInputStream(OutputStream) 
+
+
+	refer SerializationApp folder.
+	
+**************************
+
+transient keyword :-
+*****************
+
+=> If we apply transient keyword on any data member which can not be serialized.
+
+	Ex: -
+
+package com.oracle.bean;
+import java.io.Serializable;
+
+public class AccountHolderBean implements Serializable
+	{
+private int accountNumber;
+private transient String accountName;// accountName can not be serialized.
+private float accountBalance; 
+....
+...
+	}
+
+refer TransientApp folder.
+
+What is serializationVersionID? Why to give custom serializationID?
+
+The serialization runtime associates with each serializable class a version number, called a serialVersionUID, which is used during deserialization to verify that the sender and receiver of a serialized object have loaded classes for that object that are compatible with respect to serialization. 
+
+If the receiver has loaded a class for the object that has a different serialVersionUID than that of the corresponding sender's class, then deserialization will result in an  InvalidClassException. 
+
+A serializable class can declare its own serialVersionUID explicitly by declaring a field named serialVersionUID that must be static, final, and of type long:
+
+ANY-ACCESS-MODIFIER static final long serialVersionUID = 42L;
+If a serializable class does not explicitly declare a serialVersionUID, then the serialization runtime will calculate a default serialVersionUID value for that class based on various aspects of the class, as described in the Java(TM) Object Serialization Specification.
+
+However, it is strongly recommended that all serializable classes explicitly declare serialVersionUID values, since the default serialVersionUID computation is highly sensitive to class details that may vary depending on compiler implementations, and can thus result in unexpected InvalidClassExceptions during deserialization. 
+
+Therefore, to guarantee a consistent serialVersionUID value across different java compiler implementations, a serializable class must declare an explicit serialVersionUID value. 
+
+It is also strongly advised that explicit serialVersionUID declarations use the private modifier where possible, since such declarations apply only to the immediately declaring class serialVersionUID fields are not useful as inherited members.
+
+
+
+FileWriter and FileReader :-
+*************************
+
+Using FileWriter can write Charecter oriented data to the file directly.
+
+Constructor :-
+
+public FileWriter(String fileName)
+
+
+methods
+
+public void write(Char) throws IOException
+
+public void write(char[])  throws IOException
+
+public void flush() throws Exception;
+
+public voic close() throws Exception;
+
+
+
+Using FileRead can read Charecter oriented data from the file directly.
+
+Constructor :-
+
+public FileReader(String fileName)
+
+
+methods
+
+public int read() throws Exception;
+public voic close() throws Exception;
+
+
+Understanding java.io.PrintStream :-
+********************************
+
+The java.io.PrintStream has given following overloaded methods which are used to write the data into OuputputStreams.
+
+  public void print(boolean);
+  public void print(char);
+  public void print(int);
+  public void print(long);
+  public void print(float);
+  public void print(double);
+  public void print(char[]);
+  public void print(java.lang.String);
+  public void print(java.lang.Object);
+  public void println();
+  public void println(boolean);
+  public void println(char);
+  public void println(int);
+  public void println(long);
+  public void println(float);
+  public void println(double);
+  public void println(char[]);
+  public void println(java.lang.String);
+  public void println(java.lang.Object); 
+
+The above methods can also be used by the PrintStream class to write the data into the file.
+
+
+The "java.io.PrintStream" class is internally used by the "java.lang.System" class to print the data on the console.
+
+Constructor :-
+*************
+
+public PrintStream(OutputStream)
+
+
+
+Reading Data From Keyboard :-
+**************************
+
+1. Using java.util.Scanner class
+
+2. Using java.io.InputStreamReader
+
+java.io.InputStreamReader can make a stream between keybord and java application. We can not access data from "InputStreamReader" directly. 
+To work with InputStreamReader we need to make use of "java.io.BufferedReader". 
+
+InputStreamReader constructor 
+*****************************
+public InputStreamReader(java.io.InputStream) 
+
+
+BufferedReader constructor :
+*********************
+public BufferedReader(java.io.InputStreamReader)
+
+The BufferedReader given "public String readLine()" method to access the keybord data.
+
+3. Using java.io.Console :-
+   *********************
+
+The "java.io.Console" class has given following methods to read the input data.
+
+	1. public String readLine() :- this is used to read data.
+
+	2. public char[] readPassword() :- this is used to read sensitive data. Whatever password we enter on the console won't be visible to the user.
+
+
+Console class Object creation :-
+
+Console  c = System.console();
+
