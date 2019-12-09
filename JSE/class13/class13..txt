@@ -73,10 +73,7 @@ super keyword && super()  constructor :-
 
 super keyword :-
 ****
-=> "super" keyword is an implicit reference variable , created by JVM for super class object.
-
-=> "super" keyword will allways represents Super class Instance.
-
+=> "super" keyword is an implicit reference variable , created by JVM , which always refers to parent class data members..
 => When super class variables and child class variable both are same , we can differentiate them using "super" keyword.
 
 refer SuperEx1.java
@@ -89,9 +86,9 @@ super()  constructor :-
 
 => JVM by defaultly adds "super()" constructor  as a first statement within the Child Constructor.
 
-=> Whenever we are trying to create child class object, JVM internally creates super class object using "super()" constructor.
+=> Whenever we are trying to create child class object, JVM internally invokes super() constructor to initialize parent class data members.
 
-=> The super class object will be refered by the JVM using an implicit reference variable i.e "super".
+=> The parent class data members can be refered with the  implicit reference variable i.e "super".
 
 refer SuperEx.java and SuperDiagram.
 
